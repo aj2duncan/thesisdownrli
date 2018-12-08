@@ -18,6 +18,6 @@ to specify the creation of a webpage version of the thesis.
 }
 \examples{
 \dontrun{
- output: gauchodown::thesis_gitbook
+ output: thesisdownrli::thesis_gitbook
 }
 }

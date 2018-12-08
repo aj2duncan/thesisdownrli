@@ -1,4 +1,4 @@
 library(testthat)
-library(gauchodown)
+library(thesisdownrli)
 
-test_check("gauchodown")
+test_check("thesisdownrli")

@@ -1,18 +1,19 @@
-Package: gauchodown
-Title: An R Markdown thesis template for the University of California Santa Barbara
+Package: thesisdownrli
+Title: An R Markdown thesis template for the University of the Highlands and Islands, River and Lochs Institute
 Version: 0.0.5
 Authors@R: c(
     person("Ovando", "Dan", email = "dovando07@gmail.com", role = "aut"),
     person("Chester", "Ismay", email = "chester.ismay@gmail.com", role = "aut"),
     person("Nick", "Solomon", email = "nick@nicksolomon.me", role = "aut"),
-    person("Ben", "Marwick", email = "benmarwick@gmail.com", role = c("cre", "aut")))
+    person("Ben", "Marwick", email = "benmarwick@gmail.com", role = c("cre", "aut")),
+    person("Andrew", "Duncan", email = "andrew@aj2duncan.com", role = "aut"))
 Description: Using the bookdown package and LaTeX and Word thesis templates from
-    UC Santa Barbara, this package aims to encourage reproducible research using
+    UC Santa Barbara (currently), this package aims to encourage reproducible research using
     simple Markdown syntax while embedding all of the R code to produce plots
     and analyses as well. Based on Chester Ismay's thesisdown.
-Maintainer: Dan Ovando <dovando07@gmail.com>
+Maintainer: Andrew Duncan <andrew@aj2duncan.com>
 Depends:
-    R (>= 3.4.4)
+    R (>= 3.4.0)
 Imports:
     bookdown,
     rmarkdown,
@@ -24,7 +25,7 @@ Imports:
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
 SystemRequirements: pandoc (>= 1.18) - http://pandoc.org
 Suggests: 
     testthat

@@ -13,7 +13,7 @@
 #' @import bookdown
 #' @examples
 #' \dontrun{
-#'  output: gauchdown::thesis_pdf
+#'  output: thesisdownrli::thesis_pdf
 #' }
 thesis_pdf <- function(toc = TRUE, toc_depth = 3, highlight = "default", ...){
 
@@ -48,7 +48,7 @@ thesis_pdf <- function(toc = TRUE, toc_depth = 3, highlight = "default", ...){
 #' @import bookdown
 #' @examples
 #' \dontrun{
-#'  output: gauchodown::thesis_gitbook
+#'  output: thesisdownrli::thesis_gitbook
 #' }
 thesis_gitbook <- function(...){
 
@@ -80,7 +80,7 @@ thesis_gitbook <- function(...){
 #' the Reed Senior Thesis Word template
 #' @examples
 #' \dontrun{
-#'  output: gauchodown::thesis_word
+#'  output: thesisdownrli::thesis_word
 #' }
 thesis_word <- function(...){
 
@@ -105,7 +105,7 @@ thesis_word <- function(...){
 #' @return A ebook version of the thesis
 #' @examples
 #' \dontrun{
-#'  output: gauchodown::thesis_epub
+#'  output: thesisdownrli::thesis_epub
 #' }
 thesis_epub <- function(...){
 
@@ -119,6 +119,9 @@ thesis_epub <- function(...){
 
 }
 
+#' Options for post.latex in bookdown
+#' @param x string
+#' @return string
 fix_envs = function(x){
   beg_reg <- '^\\s*\\\\begin\\{.*\\}'
   end_reg <- '^\\s*\\\\end\\{.*\\}'
@@ -129,15 +132,4 @@ fix_envs = function(x){
   )
   if (length(i3)) x = x[-i3]
   x
-}
-
-
-#' Makes R CMD check quieter
-#'
-#' This is a function that does nothing
-#'
-#' @import  devtools dplyr  ggplot2 knitr git2r
-hush_notes <- function() {
-
-
 }

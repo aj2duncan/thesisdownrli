@@ -1,4 +1,4 @@
-name:  UCSB-Dissertation
+name:  Thesis-RLI
 description: >
- Template for creating a PhD Thesis at UCSB using R Markdown based on the UCSB LaTeX template and the R bookdown package.
+ Template for creating a PhD Thesis at UHI using R Markdown. Template is based on the UCSB LaTeX template and uses the R bookdown package.
 

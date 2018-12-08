@@ -25,6 +25,6 @@ to specify using the University of California Santa Barbara Thesis LaTeX templat
 }
 \examples{
 \dontrun{
- output: gauchdown::thesis_pdf
+ output: thesisdownrli::thesis_pdf
 }
 }

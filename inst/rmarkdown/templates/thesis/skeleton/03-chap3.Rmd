@@ -11,11 +11,11 @@ if(!require(ggplot2))
     install.packages("ggplot2", repos = "http://cran.rstudio.com")
 if(!require(ggplot2))
     install.packages("bookdown", repos = "http://cran.rstudio.com")
-if(!require(gauchodown)){
+if(!require(thesisdownrli)){
   library(devtools)
-  devtools::install_github("benmarwick/gauchodown")
+  devtools::install_github("aj2duncan/thesisdownrli")
   }
-library(gauchodown)
+library(thesisdownrli)
 flights <- read.csv("data/flights.csv")
 ```
 
