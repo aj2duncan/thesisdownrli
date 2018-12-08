@@ -10,7 +10,6 @@
 #' @param ... other arguments to bookdown::pdf_book
 #' @return A modified \code{pdf_document} based on the Reed Senior Thesis LaTeX
 #'   template
-#' @import bookdown
 #' @examples
 #' \dontrun{
 #'  output: thesisdownrli::thesis_pdf
@@ -45,14 +44,13 @@ thesis_pdf <- function(toc = TRUE, toc_depth = 3, highlight = "default", ...){
 #' @param ... other arguments to bookdown::gitbook
 #' @export
 #' @return A gitbook webpage
-#' @import bookdown
 #' @examples
 #' \dontrun{
 #'  output: thesisdownrli::thesis_gitbook
 #' }
 thesis_gitbook <- function(...){
 
-  base <- gitbook(
+  base <- bookdown::gitbook(
     split_by = "chapter+number",
     config = list(toc = list(collapse = "section",
       before = '<li><a href="./"></a></li>',
@@ -74,7 +72,6 @@ thesis_gitbook <- function(...){
 #' This is a function called in output in the YAML of the driver Rmd file
 #' to specify the creation of a Microsoft Word version of the thesis.
 #' @param ... other arguments to  bookdown::word_document2
-#' @import bookdown
 #' @export
 #' @return A Word Document based on (hopefully soon, but not currently)
 #' the Reed Senior Thesis Word template
@@ -84,7 +81,7 @@ thesis_gitbook <- function(...){
 #' }
 thesis_word <- function(...){
 
-  base <- word_document2(...)
+  base <- bookdown::word_document2(...)
 
   # Mostly copied from knitr::render_sweave
   base$knitr$opts_chunk$comment <- NA
@@ -100,7 +97,6 @@ thesis_word <- function(...){
 #' to specify the creation of a epub version of the thesis.
 #'
 #' @param ... other arguments to bookdown::epub_book
-#' @import bookdown
 #' @export
 #' @return A ebook version of the thesis
 #' @examples
@@ -109,7 +105,7 @@ thesis_word <- function(...){
 #' }
 thesis_epub <- function(...){
 
-  base <- epub_book(...)
+  base <- bookdown::epub_book(...)
 
   # Mostly copied from knitr::render_sweave
   base$knitr$opts_chunk$comment <- NA
