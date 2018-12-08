@@ -26,8 +26,8 @@ test_that("Template files are present", {
 context("create the thesis directories and files")
 
 if (getwd() != testing_path) setwd(testing_path)
-if (dir.exists('index')) unlink('index', recursive = TRUE)
-suppressMessages(rmarkdown::draft('index.Rmd',
+if (dir.exists('thesis')) unlink('thesis', recursive = TRUE)
+suppressMessages(rmarkdown::draft('thesis.Rmd',
                                   system.file("rmarkdown",
                                               "templates",
                                               "thesis",
@@ -55,14 +55,14 @@ suppressMessages(rmarkdown::draft('index.Rmd',
 
 context("render into a PDF")
 
-if (getwd() != file.path(testing_path, 'index')) setwd(file.path(testing_path, 'index'))
-bookdown::render_book('index.Rmd',
+if (getwd() != file.path(testing_path, 'thesis')) setwd(file.path(testing_path, 'thesis'))
+bookdown::render_book('thesis.Rmd',
                       thesisdownrli::thesis_pdf(latex_engine = 'xelatex'),
                       envir = globalenv())
 
 test_that("bookdown::render_book generates the PDF of the thesis", {
 
-  expect_true(file.exists(file.path(testing_path, 'index/_book/thesis.pdf')))
+  expect_true(file.exists(file.path(testing_path, 'thesis/_book/thesis.pdf')))
 
 })
 
