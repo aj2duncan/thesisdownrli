@@ -17,7 +17,8 @@ dir.create(testing_path, showWarnings = FALSE)
 
 context("check that the pkg template files are present")
 
-template_files <- list.files(system.file('rmarkdown', package = 'thesisdownrli'), recursive = TRUE)
+template_files <- list.files(system.file('rmarkdown', package = 'thesisdownrli'),
+                             recursive = TRUE)
 
 test_that("Template files are present", {
   expect_true(length(template_files) == 22)
@@ -26,8 +27,8 @@ test_that("Template files are present", {
 context("create the thesis directories and files")
 
 if (getwd() != testing_path) setwd(testing_path)
-if (dir.exists('thesis')) unlink('thesis', recursive = TRUE)
-suppressMessages(rmarkdown::draft('thesis.Rmd',
+if (dir.exists('index')) unlink('index', recursive = TRUE)
+suppressMessages(rmarkdown::draft('index.Rmd',
                                   system.file("rmarkdown",
                                               "templates",
                                               "thesis",
@@ -55,14 +56,16 @@ suppressMessages(rmarkdown::draft('thesis.Rmd',
 
 context("render into a PDF")
 
-if (getwd() != file.path(testing_path, 'thesis')) setwd(file.path(testing_path, 'thesis'))
-bookdown::render_book('thesis.Rmd',
+if (getwd() != file.path(testing_path, 'index')) {
+  setwd(file.path(testing_path, 'index'))
+}
+bookdown::render_book('index.Rmd',
                       thesisdownrli::thesis_pdf(latex_engine = 'xelatex'),
                       envir = globalenv())
 
 test_that("bookdown::render_book generates the PDF of the thesis", {
 
-  expect_true(file.exists(file.path(testing_path, 'thesis/_book/thesis.pdf')))
+  expect_true(file.exists(file.path(testing_path, 'index/_book/thesis.pdf')))
 
 })
 
