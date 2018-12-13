@@ -15,7 +15,8 @@ Maintainer: Andrew Duncan <andrew@aj2duncan.com>
 Depends:
     R (>= 3.4.0)
 Imports:
-    bookdown
+    bookdown,
+    xfun
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

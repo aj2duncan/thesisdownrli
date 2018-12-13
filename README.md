@@ -89,7 +89,7 @@ To render your thesis into a PDF, open `thesis.Rmd` in RStudio and then click th
 Alternatively, if you're not using RStudio, you can use this from the R console, assuming your have set the `thesis/` directory as your working directory:
 
 ```r
-bookdown::render_book('thesis.Rmd', thesisdownrli::thesis_pdf(latex_engine = 'xelatex'))
+bookdown::render_book('index.Rmd', thesisdownrli::thesis_pdf(latex_engine = 'xelatex'))
 ```
 
 The PDF file of your thesis will be deposited in the `_book/` directory.
@@ -102,7 +102,7 @@ The following components are ones you should edit to customize your thesis:
 
 This is the main configuration file for your thesis. It determines what Rmd files are included in the output, and in what order. Arrange the order of your chapters in this file and ensure that the names match the names in your folders. 
 
-### `thesis.Rmd`
+### `index.Rmd`
 
 This file contains all the meta information that goes at the beginning of your
 document. You'll need to edit this to put your name on the first page, the title of your thesis, etc.
