@@ -8,18 +8,7 @@ This document was typeset using the XeTeX typesetting system, and the [Universit
 
 The source files for this thesis, along with all the data files, have been organised into an R package, xxx, which is available at https://github.com/xxx/xxx. A hard copy of the thesis can be found in the University of Washington library.
 
-This version of the thesis was generated on `r Sys.time()`. The repository is currently at this commit:
-
-```{r echo = FALSE, eval = FALSE}
-# I've set eval=FALSE to ensure Travis-CI can run
-# if you're not using Travis-CI, then eval=TRUE will be fine
-# library(git2r)
-# if ( git2r::in_repository() ) {
-#        summary(commits()[[1]]) 
-# } else { 
-#        message("We are not in a git repository") 
-# }
-```
+This version of the thesis was generated on `r Sys.time()`. 
 
 The computational environment that was used to generate this version is as follows:
 
