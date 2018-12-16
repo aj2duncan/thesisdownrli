@@ -9,13 +9,16 @@ if(!require(dplyr))
     install.packages("dplyr", repos = "http://cran.rstudio.com")
 if(!require(ggplot2))
     install.packages("ggplot2", repos = "http://cran.rstudio.com")
-if(!require(ggplot2))
+if(!require(bookdown))
     install.packages("bookdown", repos = "http://cran.rstudio.com")
 if(!require(thesisdownrli)){
   library(devtools)
   devtools::install_github("aj2duncan/thesisdownrli")
   }
 library(thesisdownrli)
+library(dplyr)
+library(ggplot2)
+library(bookdown)
 flights <- read.csv("data/flights.csv")
 ```
 
@@ -133,5 +136,5 @@ If you look at the YAML header at the top of the main .Rmd file you can see that
 
 ## Anything else?
 
-If you'd like to see examples of other things in this template, please [contact us](https://github.com/benmarwick/huskydown/issues/new) (email <bmarwick@uw.edu>) with your suggestions. We love to see people using _R Markdown_ for their theses, and are happy to help.
+If you'd like to see examples of other things in this template, please submit an [issue](https://github.com/aj2duncan/thesisdownrli/issues/new) with your suggestions. We love to see people using _R Markdown_ for their theses, and are happy to help.
 
