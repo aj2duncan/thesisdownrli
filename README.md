@@ -1,4 +1,4 @@
- 
+[![Build Status](https://travis-ci.org/aj2duncan/thesisdownrli.svg?branch=master)](https://travis-ci.org/aj2duncan/thesisdownrli)
 
 # thesisdownrli 
 
