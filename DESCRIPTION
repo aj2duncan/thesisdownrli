@@ -23,4 +23,5 @@ LazyData: true
 RoxygenNote: 6.1.1
 SystemRequirements: pandoc (>= 1.18) - http://pandoc.org
 Suggests: 
-    testthat
+    testthat,
+    covr

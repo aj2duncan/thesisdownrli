@@ -2,15 +2,19 @@
 
 [![Build Status](https://travis-ci.org/aj2duncan/thesisdownrli.svg?branch=master)](https://travis-ci.org/aj2duncan/thesisdownrli)
 
+[![Coverage status](https://codecov.io/gh/aj2duncan/thesisdownrli/branch/master/graph/badge.svg)](https://codecov.io/github/aj2duncan/thesisdownrli?branch=master)
+
 This project provides a template for writing a PhD dissertation in R Markdown, and rendering those files into a PDF formatted for submission at the University of the Highlands and Islands . At present it uses a modified version of the thesis template from the University of California, Santa Barbara to convert R Markdown files. This package is a more or less direct copy of `gauchodown`.  Huge thanks to
 
--[gauchodown](https://github.com/kmillage/gauchodown) 
+- [gauchodown](https://github.com/kmillage/gauchodown) 
 
--[huskydown](https://github.com/benmarwick/huskydown)
+- [huskydown](https://github.com/benmarwick/huskydown)
 
--[thesisdown](https://github.com/ismayc/thesisdown) 
+- [thesisdown](https://github.com/ismayc/thesisdown) 
 
--[bookdown](https://github.com/rstudio/bookdown)
+- [bookdown](https://github.com/rstudio/bookdown)
+
+Complete documentation can be found on [https://aj2duncan.github.io/thesisdownrli](https://aj2duncan.github.io/thesisdownrli).
 
 Currently, the PDF and gitbook versions are fully-functional, and are the focus of this package. The word and epub versions are in development, have no templates behind them, and are essentially calls to the appropriate functions in bookdown.
 

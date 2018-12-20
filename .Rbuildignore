@@ -1,8 +1,8 @@
+^codecov\.yml$
+^\.corvignore$
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^\.travis\.yml$
-^Dockerfile$
-^appveyor\.yml$
 ^NEWS\.md$
 ^uw_thesis_rmd\.png$
 ^README\.md$
