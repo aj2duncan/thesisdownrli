@@ -1,8 +1,6 @@
 # thesisdownrli 
 
-[![Build Status](https://travis-ci.org/aj2duncan/thesisdownrli.svg?branch=master)](https://travis-ci.org/aj2duncan/thesisdownrli)
-
-[![Coverage status](https://codecov.io/gh/aj2duncan/thesisdownrli/branch/master/graph/badge.svg)](https://codecov.io/github/aj2duncan/thesisdownrli?branch=master)
+[![Build Status](https://travis-ci.org/aj2duncan/thesisdownrli.svg?branch=master)](https://travis-ci.org/aj2duncan/thesisdownrli) [![Coverage status](https://codecov.io/gh/aj2duncan/thesisdownrli/branch/master/graph/badge.svg)](https://codecov.io/github/aj2duncan/thesisdownrli?branch=master)
 
 This project provides a template for writing a PhD dissertation in R Markdown, and rendering those files into a PDF formatted for submission at the University of the Highlands and Islands . At present it uses a modified version of the thesis template from the University of California, Santa Barbara to convert R Markdown files. This package is a more or less direct copy of `gauchodown`.  Huge thanks to
 
