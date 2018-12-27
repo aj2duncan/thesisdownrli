@@ -51,35 +51,6 @@ devtools::install_github("aj2duncan/thesisdownrli")
 
 You should now have everything you need to start using `thesisdownrli`. 
 
-## Using `thesisdownrli`
-
-It is possible to use `thesisdownrli` without RStudio but it will probably work best with it. 
-
-### From RStudio
-
-There are two ways to use `thesisdownrli` with RStudio. 
-
-1. If you generally make use of RStudio projects then you can open a new thesis project (using thesisdownrli and bookdown) from the list of *New Project* options. 
-
-![](https://www.dropbox.com/s/7uz6hjewx1a19ux/Thesis-Project.png?raw=1)
-
-This will create a new RStudio project in a folder containing all the template files needed. 
-
-2. If you don't use RStudio projects you can create a similar template folder from an *R Markdown* template. Use File -> New File -> R Markdown... then choose *From template*, then choose *Thesis-RLI*, and enter `index` as the *Name*. This will create a new folder titled *index*. Once this has been created you can rename the folder. **Note:** The temporary files will currently only **Knit** if you name the directory `index` when creating it. 
-![](https://www.dropbox.com/s/m2nndk8upnb9tqq/Thesis-Template.png?raw=1)
-
-### Without RStudio
-
-If you're not using RStudio, run this line in your R console to create a new PhD dissertation from the template:
-
-```r
-rmarkdown::draft('index.Rmd', template = 'thesis', package = 'thesisdownrli', create_dir = TRUE)
-```
-
-## Creating Your Thesis
-
-If you have followed the steps above then hopefully you will have a new folder containing some template R markdown files amongst other things. To test whether everything is working ok you should now open the file named *index.Rmd* (if it isn't already open) and click the **Knit** button at the top. 
-
 ## Contributing
 
 If you would like to contribute to this project, please start by reading our [Guide to Contributing](CONTRIBUTING.md). Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.

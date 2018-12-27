@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>An R Markdown thesis template for the University of the Highlands and Islands, River and Lochs Institute • thesisdownrli</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="An R Markdown thesis template for the University of the Highlands and Islands, River and Lochs Institute">
@@ -46,13 +46,23 @@
   </a>
 </li>
 <li>
+  <a href="articles/thesisdownrli.html">Get started</a>
+</li>
+<li>
   <a href="reference/index.html">Reference</a>
 </li>
 <li>
   <a href="news/index.html">Changelog</a>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/aj2duncan/thesisdownrli">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -67,182 +77,65 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#thesisdownrli" class="anchor"></a>thesisdownrli</h1></div>
 
-<p>This project provides a template for writing a PhD dissertation in R Markdown, and rendering those files into a PDF formatted for submission at the University of the Highlands and Islands. At present it is using a modified version of the style required by the <a href="http://www.graddiv.ucsb.edu/academic/Filing-Your-Thesis-Dissertation-DMA-Document">the University California, Santa Barbara</a>. This package is a more or less direct copy of <code>huskydown</code> which itself is more or less a direct copy of <code>gauchodown</code>. Huge thanks to</p>
-<p>-<a href="https://github.com/kmillage/gauchodown">gauchodown</a></p>
-<p>-<a href="https://github.com/benmarwick/huskydown">huskydown</a></p>
-<p>-<a href="https://github.com/ismayc/thesisdown">thesisdown</a></p>
-<p>-<a href="https://github.com/rstudio/bookdown">bookdown</a></p>
+<p>This project provides a template for writing a PhD dissertation in R Markdown, and rendering those files into a PDF formatted for submission at the University of the Highlands and Islands . At present it uses a modified version of the thesis template from the University of California, Santa Barbara to convert R Markdown files. This package is a more or less direct copy of <code>gauchodown</code>. Huge thanks to</p>
+<ul>
+<li><p><a href="https://github.com/kmillage/gauchodown">gauchodown</a></p></li>
+<li><p><a href="https://github.com/benmarwick/huskydown">huskydown</a></p></li>
+<li><p><a href="https://github.com/ismayc/thesisdown">thesisdown</a></p></li>
+<li><p><a href="https://github.com/rstudio/bookdown">bookdown</a></p></li>
+</ul>
+<p>Complete documentation can be found on <a href="https://aj2duncan.github.io/thesisdownrli">https://aj2duncan.github.io/thesisdownrli</a>.</p>
 <p>Currently, the PDF and gitbook versions are fully-functional, and are the focus of this package. The word and epub versions are in development, have no templates behind them, and are essentially calls to the appropriate functions in bookdown.</p>
-<p>If you are new to working with <code>bookdown</code> and <code>rmarkdown</code>, please read over the documentation available in gauchodown PDF template (which you can create by following the simple instructions below) and the <a href="https://bookdown.org/yihui/bookdown/">bookdown book</a>.</p>
-<p>Under the hood, it is currently the University of California Dissertation LaTeX template is used to ensure that documents conform precisely to submission standards. At the same time, composition and formatting can be done using lightweight <a href="http://rmarkdown.rstudio.com/authoring_basics.html">markdown</a> syntax, and <strong>R</strong> code and its output can be seamlessly included using <a href="http://rmarkdown.rstudio.com">rmarkdown</a>.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<div id="prerequsites" class="section level3">
+<p>In order to use <code>thesisdownrli</code> it is necessary to have some prerequisites installed, namely Pandoc and LaTeX. Once these are installed you ready to install the package itself.</p>
+<div id="installing-pandoc-and-latex" class="section level3">
 <h3 class="hasAnchor">
-<a href="#prerequsites" class="anchor"></a>Prerequsites</h3>
-<p>Using <code>thesisdownrli</code> has some prerequisites, such as Pandoc and LaTeX. By default <code>thesisdownrli</code> will compile your Thesis into compile PDF documents. In order to do this using <strong>R</strong>, you need to have Pandoc and LaTeX installed. The easist way to do that is to install <a href="http://www.rstudio.com/products/rstudio/download/">RStudio</a> which also installs Pandoc. If you don’t want to use RStudio you will need to install Pandoc separately. Information on how to do that is available <a href="https://pandoc.org/installing.html">here</a>.</p>
-<p>Having installed RStudio (and/or) Pandoc the other thing required is LaTeX. By far the easiest way to install LaTeX on any platform is with the <a href="https://yihui.name/tinytex/"><code>tinytex</code></a> package:</p>
+<a href="#installing-pandoc-and-latex" class="anchor"></a>Installing Pandoc and LaTeX</h3>
+<p>If RStudio is already installed then so is Pandoc. If you haven’t installed RStudio the most recent version is available <a href="http://www.rstudio.com/products/rstudio/download/">here</a> and installing it will install Pandoc. If you are not an RStudio user, Pandoc can downloaded from <a href="https://pandoc.org/installing.html">here</a>.</p>
+<p>Having installed Pandoc, the final piece of software required is LaTeX, which is necessary to build PDF documents. By far the easiest way for any <code>R</code> user to install LaTeX on any platform is with the <a href="https://yihui.name/tinytex/"><code>tinytex</code></a> package:</p>
 <pre><code>install.packages(c('tinytex', 'rmarkdown'))
 tinytex::install_tinytex(force = TRUE)
-# after restarting RStudio, confirm that you have LaTeX with 
+# after restarting your R session, confirm that you have LaTeX with 
 tinytex:::is_tinytex()</code></pre>
-<p>You can now install <code>thesisdownrli</code> from <strong>Github</strong> using <code>devtools</code>. <code>thesisdownrli</code> also requires the <code>bookdown</code> package. The code below is one way of installing <code>devtools</code>, <code>bookdown</code> and <code>thesisdownrli</code>.</p>
-<pre><code>pkgs = c("devtools", "bookdown")
+</div>
+<div id="installing-thesisdownrli" class="section level3">
+<h3 class="hasAnchor">
+<a href="#installing-thesisdownrli" class="anchor"></a>Installing <code>thesisdownrli</code>
+</h3>
+<p>The code below should install all the prerequisites for <code>thesisdownrli</code>. If you are unsure about installing packages yourself the code should be copy and paste.</p>
+<pre><code># check for and install devtools (for install_github) 
+# and bookdown
+pkgs = c("devtools", "bookdown")
 pkgs_needed = pkgs[!(pkgs %in% installed.packages())]
-for (pkg in pkgs_needed) { 
-    install.packages(pkg)
+for (pkg in pkgs_needed) {
+    install.packages(pkg, dependecies = TRUE)
 }
 # install thesisdownrli
 devtools::install_github("aj2duncan/thesisdownrli")</code></pre>
-<p>Now restart your <code>R</code> session.</p>
+<p>You should now have everything you need to start using <code>thesisdownrli</code>.</p>
 </div>
-</div>
-<div id="using-thesisdownrli" class="section level2">
-<h2 class="hasAnchor">
-<a href="#using-thesisdownrli" class="anchor"></a>Using thesisdownrli</h2>
-<p>Although <code>thesisdownrli</code> can be used without RStudio it is designed to work with it.</p>
-<div id="using-thesisdownrli-with-rstudio" class="section level3">
-<h3 class="hasAnchor">
-<a href="#using-thesisdownrli-with-rstudio" class="anchor"></a>Using thesisdownrli with RStudio</h3>
-<p>There are two main ways to use <code>thesisdownrli</code> from <a href="http://www.rstudio.com/products/rstudio/download/">RStudio</a>.</p>
-<ol>
-<li>Create a <strong>New Project</strong> and choose <strong>Thesis Project using thesisdownrli and bookdown</strong> from the list.</li>
-</ol>
-<p><img src="images/Thesis-Project.png"></p>
-<ol>
-<li>If you don’t use RStudio projects then you can use the <strong>New R Markdown</strong> dialog to select <strong>Thesis-RLI</strong>, here are the steps, and a screenshot below:</li>
-</ol>
-<p><em>File -&gt; New File -&gt; R Markdown…</em> then choose <em>From template</em>, then choose <em>Thesis-RLI</em>, and enter <code>index</code> as the <strong>Name</strong>. This will create new directory wherever you choose to save the file and you can rename the directory at this point.</p>
-<p><strong>Note:</strong> You can only <strong>Knit</strong> the created thesis if you use the name <code>index</code> when creating it. You can rename the directory afterwards to a name of your choice.</p>
-<p><img src="images/Thesis-Template.png"></p>
-</div>
-<div id="using-thesisdownrli-without-rstudio" class="section level3">
-<h3 class="hasAnchor">
-<a href="#using-thesisdownrli-without-rstudio" class="anchor"></a>Using thesisdownrli without RStudio</h3>
-<p>Finally, f you’re not using RStudio at all, run this line in your R console to create a new PhD dissertation from the template:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">rmarkdown<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/rmarkdown/topics/draft">draft</a></span>(<span class="st">'index.Rmd'</span>, <span class="dt">template =</span> <span class="st">'Thesis-RLI'</span>, <span class="dt">package =</span> <span class="st">'thesisdownrli'</span>, <span class="dt">create_dir =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
-</div>
-<div id="starting-your-first-draft" class="section level3">
-<h3 class="hasAnchor">
-<a href="#starting-your-first-draft" class="anchor"></a>Starting your first draft</h3>
-<p>Hopefully now you’ve got a nice looking repo and your index.Rmd file. The YAML (YAML ain’t markup language) material at the start of index.Rmd contains a bunch of metadata for your dissertation. This is where you can enter your name, dissertation title, committee members, abstract, dedication, acknowledgements, etc.</p>
-<p>UCSB’s template also has a CV section that includes education and publications. I’m sure there’s a way to automate this, but I’m not going to tackle it at this point. For now, to edit this section inside the repo created from your template</p>
-<ol>
-<li><p>Open up template.tex</p></li>
-<li><p>Scroll down to the block labeled “CV” (should be around line 147)</p></li>
-<li><p>Modify the education section as needed</p></li>
-<li><p>For the publications, I just exported a bibliogrphy from <a href="http://zotero.org/">Zotero</a> to my clipboard and pasted it here. The formatting isn’t perfect but I’d call it good enough. If someone wants to take a stab at generating a sub-bibliography in this section that would be great!</p></li>
-</ol>
-</div>
-<div id="day-to-day-writing-of-your-thesis" class="section level3">
-<h3 class="hasAnchor">
-<a href="#day-to-day-writing-of-your-thesis" class="anchor"></a>Day-to-day writing of your thesis</h3>
-<p>You need to edit the individual chapter R Markdown files to write your thesis.</p>
-<p>You can write in the Rmd files without RStudio (in fact RStudio lacks some conveniences for writing, such as live spell-checking and live word count). So you may prefer to do some writing and editing your Rmd files in your favourite text editor. I frequently use <a href="https://atom.io/">Atom</a>, <a href="https://notepad-plus-plus.org/">Notepad++</a>, and <a href="https://www.gnu.org/software/emacs/">Emacs</a>. But I come back to RStudio to create the PDF and work on the R code in my documents.</p>
-<p>While writing, you should <code>git commit</code> your work frequently, after every major activity on your thesis. For example, every few paragraphs or section of text, and after major step of analysis development. You should <code>git push</code> at the end of each work session before you leave your computer or change task. For gentle novice-friendly guide to getting starting with using Git with R and RStudio, see <a href="http://happygitwithr.com/" class="uri">http://happygitwithr.com/</a>.</p>
-</div>
-</div>
-<div id="rendering" class="section level2">
-<h2 class="hasAnchor">
-<a href="#rendering" class="anchor"></a>Rendering</h2>
-<p>To render your thesis into a PDF, open <code>thesis.Rmd</code> in RStudio and then click the “knit” button. To change the output formats between PDF, gitbook and Word , look at the <code>output:</code> field in <code>thesis.Rmd</code>and comment-out the formats you don’t want.</p>
-<p>Alternatively, if you’re not using RStudio, you can use this from the R console, assuming your have set the <code>thesis/</code> directory as your working directory:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">bookdown<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/bookdown/topics/render_book">render_book</a></span>(<span class="st">'index.Rmd'</span>, thesisdownrli<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/thesisdownrli/topics/thesis_pdf">thesis_pdf</a></span>(<span class="dt">latex_engine =</span> <span class="st">'xelatex'</span>))</a></code></pre></div>
-<p>The PDF file of your thesis will be deposited in the <code>_book/</code> directory.</p>
-</div>
-<div id="components" class="section level2">
-<h2 class="hasAnchor">
-<a href="#components" class="anchor"></a>Components</h2>
-<p>The following components are ones you should edit to customize your thesis:</p>
-<div id="bookdown-yml" class="section level3">
-<h3 class="hasAnchor">
-<a href="#bookdown-yml" class="anchor"></a><code>_bookdown.yml</code>
-</h3>
-<p>This is the main configuration file for your thesis. It determines what Rmd files are included in the output, and in what order. Arrange the order of your chapters in this file and ensure that the names match the names in your folders.</p>
-</div>
-<div id="index-rmd" class="section level3">
-<h3 class="hasAnchor">
-<a href="#index-rmd" class="anchor"></a><code>index.Rmd</code>
-</h3>
-<p>This file contains all the meta information that goes at the beginning of your document. You’ll need to edit this to put your name on the first page, the title of your thesis, etc.</p>
-</div>
-<div id="chap1-rmd-02-chap2-rmd-etc-" class="section level3">
-<h3 class="hasAnchor">
-<a href="#chap1-rmd-02-chap2-rmd-etc-" class="anchor"></a><code>01-chap1.Rmd</code>, <code>02-chap2.Rmd</code>, etc.</h3>
-<p>These are the Rmd files for each chapter in your dissertation. Write your thesis in these. If you’re writing in RStudio, you may find the <a href="https://github.com/benmarwick/wordcountaddin">wordcount addin</a> useful for getting word counts and readability statistics in R markdown documents. You might also enjoy writing in these Rmd files with <a href="https://atom.io/">Atom</a>, <a href="https://notepad-plus-plus.org/">Notepad++</a>, <a href="https://www.sublimetext.com/">Sublime Text</a>, and <a href="https://www.gnu.org/software/emacs/">Emacs</a>.</p>
-</div>
-<div id="bib" class="section level3">
-<h3 class="hasAnchor">
-<a href="#bib" class="anchor"></a><code>bib/</code>
-</h3>
-<p>Store your bibliography (as bibtex files) here. We recommend using the <a href="https://github.com/crsh/citr">citr addin</a> and <a href="https://www.zotero.org/">Zotero</a> to efficiently manage and insert citations.</p>
-</div>
-<div id="csl" class="section level3">
-<h3 class="hasAnchor">
-<a href="#csl" class="anchor"></a><code>csl/</code>
-</h3>
-<p>Specific style files for bibliographies should be stored here. A good source for citation styles is <a href="https://github.com/citation-style-language/styles#readme" class="uri">https://github.com/citation-style-language/styles#readme</a></p>
-</div>
-<div id="figure-and-data" class="section level3">
-<h3 class="hasAnchor">
-<a href="#figure-and-data" class="anchor"></a><code>figure/</code> and <code>data/</code>
-</h3>
-<p>Store your figures and data here and reference them in your R Markdown files. See the <a href="https://bookdown.org/yihui/bookdown/">bookdown book</a> for details on cross-referencing items using R Markdown.</p>
-</div>
-</div>
-<div id="related-projects" class="section level2">
-<h2 class="hasAnchor">
-<a href="#related-projects" class="anchor"></a>Related projects</h2>
-<p>This project has drawn directly on code and ideas in the following:</p>
-<ul>
-<li>
-<a href="https://github.com/UWIT-IAM/UWThesis" class="uri">https://github.com/UWIT-IAM/UWThesis</a><br>
-</li>
-<li>
-<a href="https://github.com/stevenpollack/ucbthesis" class="uri">https://github.com/stevenpollack/ucbthesis</a><br>
-</li>
-<li>
-<a href="https://github.com/suchow/Dissertate" class="uri">https://github.com/suchow/Dissertate</a><br>
-</li>
-<li>
-<a href="https://github.com/SeungkiKwak/Kwak_S_PhD_thesis" class="uri">https://github.com/SeungkiKwak/Kwak_S_PhD_thesis</a><br>
-</li>
-<li><a href="https://github.com/dhalperi/uwthesis-tweaked" class="uri">https://github.com/dhalperi/uwthesis-tweaked</a></li>
-</ul>
-<p>Other relevant projects:</p>
-<ul>
-<li>Ed Berry’s blog post <a href="https://eddjberry.netlify.com/post/writing-your-thesis-with-bookdown/">‘Writing your thesis with bookdown’</a>, Posted on September 25, 2017<br>
-</li>
-<li>Rosanna van Hespen’s (<a href="https://twitter.com/rosannavhespen?lang=en">@rosannavhespen</a>) five blog posts on <a href="https://rosannavanhespenresearch.wordpress.com/2016/02/03/writing-your-thesis-with-r-markdown-1-getting-started/">‘Writing your thesis with R Markdown’</a>
-</li>
-<li>
-<a href="https://github.com/mine-cetinkaya-rundel/thesisdowndss">thesisdowndss</a> by Mine Cetinkaya-Rundel at Duke University<br>
-</li>
-<li>
-<a href="https://github.com/zkamvar/beaverdown">beaverdown</a> by Zhian Kamvar at Oregon State University</li>
-</ul>
 </div>
 <div id="contributing" class="section level2">
 <h2 class="hasAnchor">
 <a href="#contributing" class="anchor"></a>Contributing</h2>
 <p>If you would like to contribute to this project, please start by reading our <a href="CONTRIBUTING.html">Guide to Contributing</a>. Please note that this project is released with a <a href="CONDUCT.html">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p>
-<!--
-To update the PDF template stored in inst/ assuming we are at top level:
-
-rmarkdown::draft('index.Rmd', template = 'thesis', package = 'thesisdownrli', create_dir = TRUE, edit = FALSE)
-
-setwd('index')
-
-bookdown::render_book('index.Rmd', thesisdownrli::thesis_pdf(latex_engine = 'xelatex'))
-
--->
 </div>
 </div>
   </div>
 
   <div class="col-md-3" id="sidebar">
-    <div class="license">
+    <div class="links">
+<h2>Links</h2>
+<ul class="list-unstyled">
+<li>Browse source code at <br><a href="https://github.com/aj2duncan/thesisdownrli">https://​github.com/​aj2duncan/​thesisdownrli</a>
+</li>
+<li>Report a bug at <br><a href="https://github.com/aj2duncan/thesisdownrli/issues">https://​github.com/​aj2duncan/​thesisdownrli/​issues</a>
+</li>
+</ul>
+</div>
+<div class="license">
 <h2>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
@@ -252,11 +145,11 @@ bookdown::render_book('index.Rmd', thesisdownrli::thesis_pdf(latex_engine = 'xel
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>Ovando Dan <br><small class="roles"> Author </small>  </li>
+<li>Andrew Duncan <br><small class="roles"> Maintainer, author </small>  </li>
+<li>Dan Ovando <br><small class="roles"> Author </small>  </li>
 <li>Chester Ismay <br><small class="roles"> Author </small>  </li>
 <li>Nick Solomon <br><small class="roles"> Author </small>  </li>
-<li>Ben Marwick <br><small class="roles"> Maintainer, author </small>  </li>
-<li>Andrew Duncan <br><small class="roles"> Author </small>  </li>
+<li>Ben Marwick <br><small class="roles"> Author </small>  </li>
 </ul>
 </div>
 
@@ -264,6 +157,7 @@ bookdown::render_book('index.Rmd', thesisdownrli::thesis_pdf(latex_engine = 'xel
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://travis-ci.org/aj2duncan/thesisdownrli"><img src="https://travis-ci.org/aj2duncan/thesisdownrli.svg?branch=master" alt="Build Status"></a></li>
+<li><a href="https://codecov.io/github/aj2duncan/thesisdownrli?branch=master"><img src="https://codecov.io/gh/aj2duncan/thesisdownrli/branch/master/graph/badge.svg" alt="Coverage status"></a></li>
 </ul>
 </div>
 </div>
@@ -271,7 +165,7 @@ bookdown::render_book('index.Rmd', thesisdownrli::thesis_pdf(latex_engine = 'xel
 
 
       <footer><div class="copyright">
-  <p>Developed by Ovando Dan, Chester Ismay, Nick Solomon, Ben Marwick, Andrew Duncan.</p>
+  <p>Developed by Andrew Duncan, Dan Ovando, Chester Ismay, Nick Solomon, Ben Marwick.</p>
 </div>
 
 <div class="pkgdown">

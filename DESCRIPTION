@@ -2,11 +2,11 @@ Package: thesisdownrli
 Title: An R Markdown thesis template for the University of the Highlands and Islands, River and Lochs Institute
 Version: 0.0.5
 Authors@R: c(
-    person("Ovando", "Dan", email = "dovando07@gmail.com", role = "aut"),
+    person("Andrew", "Duncan", email = "andrew@aj2duncan.com", role = c("cre", "aut")),
+    person("Dan", "Ovando", email = "dovando07@gmail.com", role = "aut"),
     person("Chester", "Ismay", email = "chester.ismay@gmail.com", role = "aut"),
     person("Nick", "Solomon", email = "nick@nicksolomon.me", role = "aut"),
-    person("Ben", "Marwick", email = "benmarwick@gmail.com", role = c("cre", "aut")),
-    person("Andrew", "Duncan", email = "andrew@aj2duncan.com", role = "aut"))
+    person("Ben", "Marwick", email = "benmarwick@gmail.com", role = "aut"))
 Description: Using the bookdown package and LaTeX and Word thesis templates from
     UC Santa Barbara (currently), this package aims to encourage reproducible research using
     simple Markdown syntax while embedding all of the R code to produce plots
@@ -16,12 +16,17 @@ Depends:
     R (>= 3.4.0)
 Imports:
     bookdown,
-    xfun
+    xfun,
+    rmarkdown
 License: MIT + file LICENSE
+URL: https://aj2duncan.github.io/thesisdownrli/, https://github.com/aj2duncan/thesisdownrli
+BugReports: https://github.com/aj2duncan/thesisdownrli/issues
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
 SystemRequirements: pandoc (>= 1.18) - http://pandoc.org
 Suggests: 
     testthat,
-    covr
+    covr,
+    knitr
+VignetteBuilder: knitr

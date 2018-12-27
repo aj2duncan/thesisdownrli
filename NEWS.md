@@ -1,3 +1,8 @@
+# thesisdownrli 0.0.5
+
+- Creation of pkgdown website for documentation
+- Add ability to render single chapter as individual pdf 
+
 
 # huskydown 0.0.4
 

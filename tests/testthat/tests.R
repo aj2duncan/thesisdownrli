@@ -69,6 +69,14 @@ test_that("bookdown::render_book generates the PDF of the thesis", {
 
 })
 
+context("Check creation of single chapter.")
+
+thesisdownrli::single_chapter("01-chap1.Rmd")
+
+test_that("thesisdownrli::single_chapter creates correct pdf", {
+  expect_true(file.exists(file.path(testing_path, 'index/01-chap1.pdf')))
+})
+
 
 
 
