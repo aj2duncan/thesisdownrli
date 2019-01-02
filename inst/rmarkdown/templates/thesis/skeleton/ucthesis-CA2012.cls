@@ -104,7 +104,6 @@
 \def\abstractname{Abstract}
 \def\acknowledgename{Acknowledgements}
 \def\disclaimername{Disclaimer}
-\def\vitaename{Curriculum Vit\ae}
 \def\@chapapp{\chaptername} % For use in the old 'book' style commands
 
 
@@ -365,24 +364,6 @@
   \end{center}
   \ifnum \@draftmark = 1    \ssp \else  \dsp \fi
 }{}
-
-% VITAE
-\newenvironment{vitae}{
-  \if@openright\cleardoublepage \else\clearpage \fi
-  \ssp
-  \begin{center}
-    {\large \bfseries \vitaename} \par
-    {\large \@author}
-  \end{center}
-  \begin{list}{}{\leftmargin 0in \itemsep .2in}
-  }{\end{list}
-}{\par\vfil\null}
-\newcommand{\vitaelabels}[1]{#1 \hfil}
-\newenvironment{vitaesection}[1]{
-  \item {\bf #1}
-  \begin{list}{}{\leftmargin 1.5in \labelwidth 1.3in \labelsep .2in
-  \parsep 0in
-  \let\makelabel\vitaelabels}}{\end{list}}
 
 % ABSTRACT
 % The ABSTRACT environment allows for multi-page abstracts and needs the
