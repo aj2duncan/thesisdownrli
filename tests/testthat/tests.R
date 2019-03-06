@@ -21,7 +21,7 @@ template_files <- list.files(system.file('rmarkdown', package = 'thesisdownrli')
                              recursive = TRUE)
 
 test_that("Template files are present", {
-  expect_true(length(template_files) == 21)
+  expect_true(length(template_files) == 20)
 })
 
 context("create the thesis directories and files")
@@ -40,7 +40,7 @@ suppressMessages(rmarkdown::draft('index.Rmd',
 #the_files <-  c("_bookdown.yml"    , "01-chap1.Rmd"     ,
 #                "02-chap2.Rmd"     , "03-chap3.Rmd"     ,
 #                "04-conclusion.Rmd", "05-appendix.Rmd"  ,
-#                "98-colophon.Rmd"  , "99-references.Rmd",
+#                "99-references.Rmd",
 #                "bib"              , "chemarr.sty"      ,
 #                "csl"              , "data"             ,
 #                "figure"           , "index.Rmd"        ,

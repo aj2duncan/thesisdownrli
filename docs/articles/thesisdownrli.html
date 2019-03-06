@@ -48,6 +48,18 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="../articles/single_chapter.html">Rendering a Single Chapter of your Thesis</a>
+    </li>
+  </ul>
+</li>
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
@@ -83,9 +95,9 @@
     
     
 <p>It is possible to use <code>thesisdownrli</code> without RStudio but it will probably work best with it.</p>
-<div id="from-rstudio" class="section level3">
-<h3 class="hasAnchor">
-<a href="#from-rstudio" class="anchor"></a>From RStudio</h3>
+<div id="from-rstudio" class="section level2">
+<h2 class="hasAnchor">
+<a href="#from-rstudio" class="anchor"></a>From RStudio</h2>
 <p>There are two ways to use <code>thesisdownrli</code> with RStudio.</p>
 <ol style="list-style-type: decimal">
 <li>If you generally make use of RStudio projects then you can open a new thesis project (using thesisdownrli and bookdown) from the list of <em>New Project</em> options.</li>
@@ -97,17 +109,82 @@
 </li>
 </ol>
 </div>
-<div id="without-rstudio" class="section level3">
-<h3 class="hasAnchor">
-<a href="#without-rstudio" class="anchor"></a>Without RStudio</h3>
+<div id="without-rstudio" class="section level2">
+<h2 class="hasAnchor">
+<a href="#without-rstudio" class="anchor"></a>Without RStudio</h2>
 <p>If you’re not using RStudio, run this line in your R console to create a new PhD dissertation from the template:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">rmarkdown<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/rmarkdown/topics/draft">draft</a></span>(<span class="st">'index.Rmd'</span>, <span class="dt">template =</span> <span class="st">'thesis'</span>, </a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">                 <span class="dt">package =</span> <span class="st">'thesisdownrli'</span>, <span class="dt">create_dir =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">rmarkdown<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/rmarkdown/topics/draft">draft</a></span>(<span class="st">'index.Rmd'</span>, <span class="dt">template =</span> <span class="st">'thesis'</span>, </a>
+<a class="sourceLine" id="cb1-2" title="2">                 <span class="dt">package =</span> <span class="st">'thesisdownrli'</span>, <span class="dt">create_dir =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 </div>
 <div id="creating-your-thesis" class="section level2">
 <h2 class="hasAnchor">
 <a href="#creating-your-thesis" class="anchor"></a>Creating Your Thesis</h2>
 <p>If you have followed the steps above then hopefully you will have a new folder containing some template R markdown files amongst other things. To test whether everything is working ok you should now open the file named <em>index.Rmd</em> (if it isn’t already open) and click the <strong>Knit</strong> button at the top.</p>
+<p>Alternatively, if you’re not using RStudio, you can use the line of code below, assuming your have set the <code>index/</code> directory as your working directory:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">bookdown<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/bookdown/topics/render_book">render_book</a></span>(<span class="st">'index.Rmd'</span>, thesisdownrli<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/thesisdownrli/topics/thesis_pdf">thesis_pdf</a></span>(<span class="dt">latex_engine =</span> <span class="st">'xelatex'</span>))</a></code></pre></div>
+<p>The PDF file of your thesis will be deposited in the <code>_book/</code> directory.</p>
+</div>
+<div id="components" class="section level2">
+<h2 class="hasAnchor">
+<a href="#components" class="anchor"></a>Components</h2>
+<p>The following components are ones you should edit to customize your thesis:</p>
+<div id="bookdown-yml" class="section level3">
+<h3 class="hasAnchor">
+<a href="#bookdown-yml" class="anchor"></a><code>_bookdown.yml</code>
+</h3>
+<p>This is the main configuration file for your thesis. It determines what Rmd files are included in the output, and in what order. Arrange the order of your chapters in this file and ensure that the names match the names in your folders.</p>
+</div>
+<div id="index-rmd" class="section level3">
+<h3 class="hasAnchor">
+<a href="#index-rmd" class="anchor"></a><code>index.Rmd</code>
+</h3>
+<p>This file contains all the meta information that goes at the beginning of your document. You’ll need to edit this to put your name on the first page, the title of your thesis, etc.</p>
+</div>
+<div id="chap1-rmd-02-chap2-rmd-etc-" class="section level3">
+<h3 class="hasAnchor">
+<a href="#chap1-rmd-02-chap2-rmd-etc-" class="anchor"></a><code>01-chap1.Rmd</code>, <code>02-chap2.Rmd</code>, etc.</h3>
+<p>These are the Rmd files for each chapter in your dissertation. Write your thesis in these. If you’re writing in RStudio, you may find the <a href="https://github.com/benmarwick/wordcountaddin">wordcount addin</a> useful for getting word counts and readability statistics in R markdown documents.</p>
+</div>
+<div id="bib" class="section level3">
+<h3 class="hasAnchor">
+<a href="#bib" class="anchor"></a><code>bib/</code>
+</h3>
+<p>Store your bibliography (as bibtex files) here. You will find a template <code>thesis.bib</code> to get started with. We recommend using the <a href="https://github.com/crsh/citr">citr addin</a> and <a href="https://www.zotero.org/">Zotero</a> to efficiently manage and insert citations.</p>
+</div>
+<div id="csl" class="section level3">
+<h3 class="hasAnchor">
+<a href="#csl" class="anchor"></a><code>csl/</code>
+</h3>
+<p>Specific style files for bibliographies should be stored here. A good source for citation styles is <a href="https://github.com/citation-style-language/styles#readme" class="uri">https://github.com/citation-style-language/styles#readme</a></p>
+</div>
+<div id="figure-and-data" class="section level3">
+<h3 class="hasAnchor">
+<a href="#figure-and-data" class="anchor"></a><code>figure/</code> and <code>data/</code>
+</h3>
+<p>Store your figures and data here and reference them in your R Markdown files. See the <a href="https://bookdown.org/yihui/bookdown/">bookdown book</a> for details on cross-referencing items using R Markdown.</p>
+</div>
+</div>
+<div id="related-projects" class="section level2">
+<h2 class="hasAnchor">
+<a href="#related-projects" class="anchor"></a>Related projects</h2>
+<p>This project has drawn directly on code and ideas in the following:</p>
+<ul>
+<li><a href="https://github.com/UWIT-IAM/UWThesis" class="uri">https://github.com/UWIT-IAM/UWThesis</a></li>
+<li><a href="https://github.com/stevenpollack/ucbthesis" class="uri">https://github.com/stevenpollack/ucbthesis</a></li>
+<li><a href="https://github.com/suchow/Dissertate" class="uri">https://github.com/suchow/Dissertate</a></li>
+<li><a href="https://github.com/SeungkiKwak/Kwak_S_PhD_thesis" class="uri">https://github.com/SeungkiKwak/Kwak_S_PhD_thesis</a></li>
+<li><a href="https://github.com/dhalperi/uwthesis-tweaked" class="uri">https://github.com/dhalperi/uwthesis-tweaked</a></li>
+</ul>
+<p>Other relevant projects:</p>
+<ul>
+<li>Ed Berry’s blog post <a href="https://eddjberry.netlify.com/post/writing-your-thesis-with-bookdown/">‘Writing your thesis with bookdown’</a>, Posted on September 25, 2017</li>
+<li>Rosanna van Hespen’s (<span class="citation">[@rosannavhespen]</span>(<a href="https://twitter.com/rosannavhespen?lang=en" class="uri">https://twitter.com/rosannavhespen?lang=en</a>)) five blog posts on <a href="https://rosannavanhespenresearch.wordpress.com/2016/02/03/writing-your-thesis-with-r-markdown-1-getting-started/">‘Writing your thesis with R Markdown’</a>
+</li>
+<li>
+<a href="https://github.com/mine-cetinkaya-rundel/thesisdowndss">thesisdowndss</a> by Mine Cetinkaya-Rundel at Duke University</li>
+<li>
+<a href="https://github.com/zkamvar/beaverdown">beaverdown</a> by Zhian Kamvar at Oregon State University</li>
+</ul>
 </div>
   </div>
 
@@ -116,7 +193,11 @@
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#creating-your-thesis">Creating Your Thesis</a></li>
+<li><a href="#from-rstudio">From RStudio</a></li>
+      <li><a href="#without-rstudio">Without RStudio</a></li>
+      <li><a href="#creating-your-thesis">Creating Your Thesis</a></li>
+      <li><a href="#components">Components</a></li>
+      <li><a href="#related-projects">Related projects</a></li>
       </ul>
 </div>
       </div>
@@ -129,7 +210,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
 </div>
       </footer>
 </div>

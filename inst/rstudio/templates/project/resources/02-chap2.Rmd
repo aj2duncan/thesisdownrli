@@ -1,66 +1,13 @@
-# Mathematics and Science {#math-sci}
+# Heading 1
 
-<!-- Required to number equations in HTML files -->
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  TeX: { equationNumbers: { autoNumber: "AMS" } }
-});
-</script>
+## Subheading 1
 
-## Math
+Lorem ipsum dolor sit amet, semper ex vulputate sapien facilisis luctus dis ut, elementum integer amet. Suscipit felis fames, ultricies risus per turpis sodales. Tincidunt eu amet, in per in suspendisse. Ut nam vitae turpis tempor est gravida nunc. Nec, lobortis aenean luctus aliquam et mauris laoreet sed. In erat, auctor in torquent ad netus sit, sollicitudin. At maecenas egestas magna sit et ad nisl eleifend sed nec. Ut, diam molestie a metus donec porttitor. Lacus nibh ligula felis dui lorem cubilia enim massa habitasse nulla felis. Nullam pellentesque nostra ut sed quis ad sed mattis erat. Est nisl augue ipsum dignissim.
 
-\TeX\ is the best way to typeset mathematics. Donald Knuth designed \TeX\ when he got frustrated at how long it was taking the typesetters to finish his book, which contained a lot of mathematics.  One nice feature of _R Markdown_ is its ability to read LaTeX code directly.
+## Subheading 2
 
+Pellentesque quam suscipit cras et quis neque. Ante placerat hac diam id nec sit ut velit et. Dui purus, sed potenti metus faucibus varius maximus. Sed quam eleifend ipsum quam at. Est condimentum sit, varius ad mauris. Id viverra cum nunc orci egestas mollis mus. Tempor eget eu morbi vitae sed amet eros sed varius. Fermentum nisl, eu fames rhoncus efficitur. Et, tellus convallis in vel metus vestibulum, est id ut dapibus et vel. Fermentum lacus mi cursus viverra sed leo tempor tempus.
 
-## Chemistry 101: Symbols
+## Subheading 3
 
-Chemical formulas will look best if they are not italicized. Get around math mode's automatic italicizing in LaTeX by using the argument `$\mathrm{formula here}$`, with your formula inside the curly brackets.  (Notice the use of the backticks here which enclose text that acts as code.)
-
-So, $\mathrm{Fe_2^{2+}Cr_2O_4}$ is written `$\mathrm{Fe_2^{2+}Cr_2O_4}$`.
-
-<!--
-The \noindent command below does what you'd expect:  it forces the current line/paragraph to not indent. This was done here to match the format of the LaTeX thesis PDF.
--->
-
-\noindent Exponent or Superscript: $\mathrm{O^-}$
-
-\noindent Subscript: $\mathrm{CH_4}$
-
-To stack numbers or letters as in $\mathrm{Fe_2^{2+}}$, the subscript is defined first, and then the superscript is defined.
-
-\noindent Bullet: CuCl $\bullet$ $\mathrm{7H_{2}O}$
-
-
-\noindent Delta: $\Delta$
-
-\noindent Reaction Arrows: $\longrightarrow$ or  $\xrightarrow{solution}$
-
-\noindent Resonance Arrows: $\leftrightarrow$
-
-\noindent Reversible Reaction Arrows: $\rightleftharpoons$
-
-### Typesetting reactions
-
-You may wish to put your reaction in an equation environment, which means that LaTeX will place the reaction where it fits and will number the equations for you. 
-
-\begin{equation}
-  \mathrm{C_6H_{12}O_6  + 6O_2} \longrightarrow \mathrm{6CO_2 + 6H_2O}
-  (\#eq:reaction)
-\end{equation}
-
-We can reference this combustion of glucose reaction via Equation \@ref(eq:reaction).
-
-### Other examples of reactions
-
-$\mathrm{NH_4Cl_{(s)}}$ $\rightleftharpoons$ $\mathrm{NH_{3(g)}+HCl_{(g)}}$
-
-\noindent $\mathrm{MeCH_2Br + Mg}$ $\xrightarrow[below]{above}$ $\mathrm{MeCH_2\bullet Mg \bullet Br}$
-
-## Physics
-
-Many of the symbols you will need can be found on the math page <http://web.reed.edu/cis/help/latex/math.html> and the Comprehensive LaTeX Symbol Guide (<http://mirror.utexas.edu/ctan/info/symbols/comprehensive/symbols-letter.pdf>).
-
-## Biology
-
-You will probably find the resources at <http://www.lecb.ncifcrf.gov/~toms/latex.html> helpful, particularly the links to bsts for various journals. You may also be interested in TeXShade for nucleotide typesetting (<http://homepages.uni-tuebingen.de/beitz/txe.html>).  Be sure to read the proceeding chapter on graphics and tables.
-
+Montes nibh, nisi consequat per vel malesuada ornare vestibulum? Adipiscing porttitor ac at turpis sed eget. Nullam, dui sit, odio integer per, non potenti erat molestie, nec turpis. Nisi tortor senectus nibh sed sapien pellentesque morbi. Primis convallis maecenas facilisi donec mauris amet in nunc. Tempus non pellentesque, fermentum. Ac sodales massa eu fermentum ipsum. Egestas maecenas, mus vitae consectetur varius, sed non mi."
