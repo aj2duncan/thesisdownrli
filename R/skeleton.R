@@ -7,7 +7,7 @@ thesis_skeleton = function(path) {
   resources = system.file('rstudio', 'templates', 'project', 'resources',
                           package = 'thesisdownrli', mustWork = TRUE)
   # list directories
-  dirs = c("bib", "csl", "data", "figure")
+  dirs = c("bib", "csl", "figure")
 
   # create directories
   lapply(paste0(path, "/", dirs), FUN = dir.create, showWarnings = FALSE)

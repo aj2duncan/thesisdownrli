@@ -1,7 +1,7 @@
 % UCTHESIS DOCUMENT CLASS -- Release info is below.
 %    for LaTeX version 2e - 11/3/94
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{ucthesis-CA2012} [2012/05/08 Revision by Curtis Asplund of 1996/06/26 JTW's modification of 1994/10/31 v3.0 University of California Thesis Class]
+\ProvidesClass{uhi-rli} [2019/03/08 Revision of UCthesis class by Andrew Duncan 2012/05/08 Revision by Curtis Asplund of 1996/06/26 JTW's modification of 1994/10/31 v3.0 University of California Thesis Class]
 
 \newif\ifproquest\proquestfalse
 \DeclareOption{proquest}% sets electrons-only, proquest style
@@ -234,16 +234,14 @@
 
   \null\vfil
   \begin{center}
-    University of California \par \@campus \par
+    University of Highlands and Islands \par
     \bigskip \medskip \vspace{6ex}
     \fmfont {\bfseries \Large {\@title} \par}   % Formatting of the Dissertation title
     \bigskip \medskip \vspace{6ex}
-    A dissertation submitted in partial satisfaction  \par
+    A thesis submitted in partial satisfaction  \par
     \smallskip
     of the requirements for the degree \par
     \bigskip {\@degree} \par
-    \smallskip in \par
-    \smallskip {\@field} \par
     \bigskip \medskip by \par
     \bigskip \medskip {\@author} \par
   \end{center}
@@ -365,24 +363,6 @@
   \end{center}
   \ifnum \@draftmark = 1    \ssp \else  \dsp \fi
 }{}
-
-% VITAE
-\newenvironment{vitae}{
-  \if@openright\cleardoublepage \else\clearpage \fi
-  \ssp
-  \begin{center}
-    {\large \bfseries \vitaename} \par
-    {\large \@author}
-  \end{center}
-  \begin{list}{}{\leftmargin 0in \itemsep .2in}
-  }{\end{list}
-}{\par\vfil\null}
-\newcommand{\vitaelabels}[1]{#1 \hfil}
-\newenvironment{vitaesection}[1]{
-  \item {\bf #1}
-  \begin{list}{}{\leftmargin 1.5in \labelwidth 1.3in \labelsep .2in
-  \parsep 0in
-  \let\makelabel\vitaelabels}}{\end{list}}
 
 % ABSTRACT
 % The ABSTRACT environment allows for multi-page abstracts and needs the

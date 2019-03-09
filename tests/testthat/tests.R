@@ -21,7 +21,7 @@ template_files <- list.files(system.file('rmarkdown', package = 'thesisdownrli')
                              recursive = TRUE)
 
 test_that("Template files are present", {
-  expect_true(length(template_files) == 20)
+  expect_true(length(template_files) == 15)
 })
 
 context("create the thesis directories and files")
@@ -42,9 +42,9 @@ suppressMessages(rmarkdown::draft('index.Rmd',
 #                "04-conclusion.Rmd", "05-appendix.Rmd"  ,
 #                "99-references.Rmd",
 #                "bib"              , "chemarr.sty"      ,
-#                "csl"              , "data"             ,
+#                "csl"              ,
 #                "figure"           , "index.Rmd"        ,
-#                "template.tex"     , "uwthesis.cls"    )
+#                "template.tex"     , "uhi-rli.cls"    )
 
 #### check results ####
 
