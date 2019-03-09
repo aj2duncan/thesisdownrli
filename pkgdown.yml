@@ -2,5 +2,8 @@ pandoc: '2.2'
 pkgdown: 1.3.0
 pkgdown_sha: ~
 articles:
+  RMarkdown_Basics: RMarkdown_Basics.html
+  References: References.html
+  single_chapter: single_chapter.html
   thesisdownrli: thesisdownrli.html
 
