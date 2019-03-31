@@ -99,7 +99,89 @@
 
     
     
+<p>R Markdown uses a particular form of referencing known as BibTeX. These are (as with LaTeX and R Markdown) plain text files which in this case end with <code>.bib</code>. There is a template file provided and it is recommended that the <a href="https://github.com/crsh/citr">citr</a> package and the add-ins that it provides (along with the ability to link the Zotero) should be used for referencing. It should make both inserting references and managing a <code>.bib</code> file easier.</p>
+<p>When <em>knitting</em> the document it is important that the <code>.bib</code> file(s) can be found by <code>thesisdownrli</code>. At present this is specified in the <code>index.Rmd</code> file</p>
+<pre><code>bibliography: bib/thesis.bib</code></pre>
+<p>If the name of the <code>.bib</code> file this line <strong>must</strong> also be updated. To include more than one <code>.bib</code> file provided a list of them as per :</p>
+<pre><code>bibliography: ["bib/thesis.bib", "bib/thesis_refs.bib", "bib/more_refs.bib"</code></pre>
+<div id="further-information" class="section level3">
+<h3 class="hasAnchor">
+<a href="#further-information" class="anchor"></a>Further information</h3>
+<p>BibTeX references all follow a similar format and for most academic papers/textbooks a BibTeX reference can be downloaded from the web and pasted into your <code>.bib</code> file. An example of a BibTeX file is included below and an example is available on the VLE.</p>
+<pre><code>@Book{Murray2002,
+   title = {Mathematical biology I. , An introduction},
+   author = {Murray, J. D.},
+   series = {Interdisciplinary applied mathematics},
+   publisher = {Springer},
+   address = {New York, U.S.A.},
+   isbn = {0387952233},
+   year = 2002,
+   edition = 3
+}
 
+@Article{Ludwig1978,
+  title = {Qualitative analysis of insect outbreak systems: the spruce budworm and forest},
+  author = {Ludwig, D. and Jones, D.D. and Holling, C.S.},
+  year = {1978},
+  volume = {47},
+  pages = {315--332},
+  journal = {Journal of Animal Ecology}
+}
+
+@Manual{R-ggplot2,
+  title = {ggplot2: An Implementation of the Grammar of Graphics},
+  author = {Hadley Wickham and Winston Chang},
+  year = {2016},
+  note = {R package version 2.1.0},
+  url = {https://CRAN.R-project.org/package=ggplot2},
+}</code></pre>
+<p>The above example contains three references: one book <code>@Book</code>, one journal article <code>@article</code> and one <code>R</code> package <code>@Manual</code>. Each of these types is followed by the “reference key” (<code>Murray2002</code>, <code>Ludwig1978</code> and <code>R-ggplot2</code> respectively).</p>
+<p>It is this key that you use when you want to cite something in text. To cite something you simply type <code>[@reference-key]</code> or <code>@reference-key</code> (or use the <code>citr</code> add-ins). The square brackets will add brackets <code>()</code> to your reference. So to cite the Ludwig article on Spruce Budworm we would use <code>[@Ludwig1978]</code> or <code>@Ludwig1978</code>. This would print:</p>
+<blockquote>
+<p>So to cite the Ludwig article on Spruce Budworm we would use <span class="citation">[@Ludwig1978]</span> or <span class="citation">@Ludwig1978</span>.</p>
+</blockquote>
+<p><strong>Note:</strong> The reference key <strong>should not</strong> include spaces or underscores.</p>
+<p>If you access a peer reviewed scientific paper online then there is normally an option to export the citation. In the vast majority of cases you will be able to export it in <strong>BibTeX</strong> format.</p>
+<p>This will normally give you a <code>.bib</code> file to download or it will be downloaded automatically. You can open this file in RStudio and copy the citation into your personal <code>.bib</code> file. If you do this you should change the reference key to something more sensible.</p>
+<p>The alternative is to create a citation yourself. The text below can be copied into your <code>.bib</code> file for you to edit for either an <em>article</em>, <em>book</em> or website <em>electronic</em>.</p>
+<p><strong>Note:</strong> All the individual bits of an bibtex citation need to be enclosed in curly brackets <code>{...}</code> and separated with commas. You do not need to use quotes.</p>
+<pre><code>@Book{book-ref-key,
+   title = {Book Title},
+   author = {J. Doe and J. Doe},
+   publisher = {},
+   isbn = {},
+   year = {},
+   edition = {}
+}
+
+@Article{article-ref-key,
+  title = {Paper title},
+  author = {J. Doe and J. Doe},
+  year = {},
+  volume = {},
+  pages = {},
+  journal = {},
+  doi = {}
+}
+
+@Electronic{website-ref-key,
+  title = {Title of Web article/newspaper article/blog post},
+  author = {J. Doe and J. Doe},
+  year = {},
+  url = {http://thewebaddrressofarticle.com},
+}
+</code></pre>
+</div>
+<div id="compilation-errors" class="section level3">
+<h3 class="hasAnchor">
+<a href="#compilation-errors" class="anchor"></a>Compilation Errors</h3>
+<p>When you press the <strong>Knit</strong> button, RStudio will try to compile the references. If there are any problems it will stop the compilation and provide you with an error message. Sometimes these are not that helpful. The most common mistakes are missing <code>,</code> in the <code>.bib</code> file or characters that need to be escaped. For more information of these characters please see the <a href="http://www.bibtex.org/SpecialSymbols/">bibtex</a> website.</p>
+</div>
+<div id="further-information-1" class="section level3">
+<h3 class="hasAnchor">
+<a href="#further-information-1" class="anchor"></a>Further Information</h3>
+<p>Additional guidance on using citations can be found <a href="https://bookdown.org/yihui/bookdown/citations.html">here</a> including how to cite <code>R</code> packages.</p>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

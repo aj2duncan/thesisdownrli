@@ -99,10 +99,178 @@
 
     
     
+<p>The basic language or <code>R Markdown</code> documents is (perhaps unsurprisingly) <a href="https://daringfireball.net/projects/markdown/">markdown</a>. This is a markup language which allows a plain text file (not pointing or clicking) to be turned into amongst other things HTML. <code>R Markdown</code> extends this and adds things like <code>R</code> code chunks and certain elements of <a href="https://www.latex-project.org/">LaTeX</a> to allow plain text documents to produce amongst other things Word, PDF, HTML documents, websites and books.</p>
+<p>The <a href="https://bookdown.org/yihui/bookdown/">bookdown</a> package extends R Markdown and enables some more LaTeX functionality which is useful for scientific writing. It also easily facilitates the compilation of multiple R Markdown documents into a single final document. <code>thesisdownrli</code> has added a custom LaTeX template to build a pdf thesis out of R markdown chapters.<br>
+## Markdown</p>
+<p>Most of an R Markdown file is made up of plain text. Small bits of <em>markup</em> change plain text into formatted text. Headings are preceded by a particular number of <code>#</code></p>
+<pre><code># Heading 1
+## Heading 2
+### Heading 3
+#### Heading 4
+##### Heading 5</code></pre>
+<p>It is also possible to add bold, italic etc:</p>
+<ul>
+<li>
+<code>_italic_</code> or <code>*italic*</code> produces <em>italic</em> or <em>italic</em>
+</li>
+<li>
+<code>__bold__</code> or <code>**italic**</code> produces <strong>bold</strong> or <strong>bold</strong>
+</li>
+<li>
+<code>R^2^</code> produces R<sup>2</sup>
+</li>
+<li>
+<code>R~2~</code> produces R<sub>2</sub>
+</li>
+</ul>
+<p>Lists require at least one clear line break from the preceding paragraph.</p>
+<pre><code>1. item 1
+2. item 2
+  i. subitem i
+  ii. subitem ii
+3. item 3</code></pre>
+<p>would produce</p>
+<ol style="list-style-type: decimal">
+<li>item 1</li>
+<li>item 2</li>
+</ol>
+<ol style="list-style-type: lower-roman">
+<li>subitem i</li>
+<li>subitem ii</li>
+</ol>
+<ol start="3" style="list-style-type: decimal">
+<li>item 3</li>
+</ol>
+<p>or they can be unordered</p>
+<pre><code>- item 1
+- item 2
+  - subitem i
+  - subitem ii
+- item 3</code></pre>
+<ul>
+<li>item 1</li>
+<li>item 2
+<ul>
+<li>subitem i</li>
+<li>subitem ii</li>
+</ul>
+</li>
+<li>item 3</li>
+</ul>
+<div id="r" class="section level2">
+<h2 class="hasAnchor">
+<a href="#r" class="anchor"></a><code>R</code>
+</h2>
+<p>It is not necessary actually run any code from the thesis chapters but you have this option. To run code it needs to be enclosed in an <strong>R chunk</strong>. An example is shown below. Note the 3 backticks and <em>r</em> above the line of code and the 3 backticks to close. In this case the chunk is also named <em>pressure</em>. This name can be used to refer to the chunk, which is necessary for referencing figures - more information below.</p>
+<pre><code>```{r summary}
+summary(cars)
+```</code></pre>
+<pre><code>     speed           dist       
+ Min.   : 4.0   Min.   :  2.00  
+ 1st Qu.:12.0   1st Qu.: 26.00  
+ Median :15.0   Median : 36.00  
+ Mean   :15.4   Mean   : 42.98  
+ 3rd Qu.:19.0   3rd Qu.: 56.00  
+ Max.   :25.0   Max.   :120.00  </code></pre>
+<p><code>R</code> can also be included inline as <code>`r 2+2`</code>. The code itself won’t be printed only the result of 4. This means variables (and their values) can be directly printed.</p>
+<p>For example a value can be stored as part of some work:</p>
+<pre><code>```{r initial_props}
+S_in = 0.99
+I_in = 0.01
+R_in = 0
+```</code></pre>
+<p>We can then type something like:</p>
+<blockquote>
+<p>The initial proportions of susceptible, infected and resistant individuals were <code>`r S_in`</code>, <code>`r I_in`</code> and <code>`r R_in`</code> respectively.</p>
+</blockquote>
+<p>Which would print out:</p>
+<blockquote>
+<p>The initial proportions of susceptible, infected and resistant individuals were 0.99, 0.01 and 0 respectively.</p>
+</blockquote>
+<p>Using values in text like this means that if for some reason the data changes slightly, it isn’t necessary to change all the values in text - they will change automatically the next the document is <em>knitted</em>.</p>
+</div>
+<div id="figures" class="section level2">
+<h2 class="hasAnchor">
+<a href="#figures" class="anchor"></a>Figures</h2>
+<p>Each plot produced from an <code>R</code> chunk will become a figure, with a caption if provided.</p>
+<pre><code>```{r chunk-name, fig.cap = "Scatterplot of Pressure", fig.height = 4, fig.width = 6}
+plot(pressure)
+```</code></pre>
+<div class="figure">
+<img src="RMarkdown_Basics_files/figure-html/chunk-name-1.png" alt="Scatterplot of Pressure" width="576"><p class="caption">
+Scatterplot of Pressure
+</p>
+</div>
+<p>As the figure chunk has a name, this can be referenced using the syntax <code>\@ref(fig:chunk-name)</code>. <strong>Note:</strong> Be careful to add the <code>fig:</code> before the chunk name here. For this to work the chunk name can only contain letters, numbers and dashes.</p>
+<p>So in text we would have.</p>
+<blockquote>
+<p>Figure <code>\@ref(fig:chunk-name)</code> shows a scatterplot of pressure against temperature.</p>
+</blockquote>
+<p>Images that haven’t been generated with directly from an <code>R</code> chunk or a source <code>R</code> file into an R markdown document. There are a couple of ways to do so but the best method for a thesis is to use a code chunk like the one below. A little bit of <code>R</code> code is used to <em>include the graphics</em>. Ideally the image should be in a subfolder.</p>
+<pre><code>```{r other-image, eval = FALSE}
+knitr::include_graphics("path/to/file.png")
+```</code></pre>
+<p>This method allows for figure captions and references to be used as above.</p>
+<p>For all additional guidance on <code>R</code> plots and figures in bookdown please refer to the official <a href="https://bookdown.org/yihui/bookdown/figures.html">documentation</a>.</p>
+</div>
+<div id="equations" class="section level2">
+<h2 class="hasAnchor">
+<a href="#equations" class="anchor"></a>Equations</h2>
+<p>We can insert nicely formatted LaTeX equations in all R Markdown documents. An example would be</p>
+<pre><code>\begin{equation}
+y = k e^{(\alpha - \beta)t} 
+\end{equation}</code></pre>
+<p>which would produce</p>
 
+<p>and there are more examples below.</p>
+<p>However, in order to add numbers to these equations and refer back to them we need to use the added functionality provided by <code>bookdown</code>. To do that we need add a label in the form <code>(\#eq:equation-label)</code>. For example:</p>
+<pre><code>\begin{equation}
+y = k e^{(\alpha - \beta)t} 
+(\#eq:example-eqn)
+\end{equation}</code></pre>
+<p>which can be referenced using similar syntax as figures <code>\@ref(eq:example-eqn)</code>.</p>
+<p>As with figures for more detail please refer to the official bookdown <a href="https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#equations">documentation</a></p>
+<div id="a-very-brief-guide-latex-syntax" class="section level3">
+<h3 class="hasAnchor">
+<a href="#a-very-brief-guide-latex-syntax" class="anchor"></a>A (Very) Brief Guide LaTeX Syntax</h3>
+<p>Below are some examples of how to use certain mathematical notation.</p>
+<ul>
+<li>Powers: <code>x^2</code> would become <span class="math inline">\(x^2\)</span>.</li>
+<li>Roots: <code>\sqrt{x}</code> would become <span class="math inline">\(\sqrt{x}\)</span>.</li>
+<li>Subscripts: <code>x_1</code> would become <span class="math inline">\(x_1\)</span>.</li>
+<li>Brackets <code>(x^2)</code> would become <span class="math inline">\((x^2)\)</span>. If you want them to automatically become the correct size you can use <code>\left(\frac{1}{2}\right)</code> which will produce <span class="math inline">\(\left(\frac{1}{2}\right)\)</span>.</li>
+<li>Greek letters: <code>\alpha</code>, <code>\beta</code>, <code>\delta</code>, <code>\epsilon</code> and <code>\gamma</code> would become <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span>, <span class="math inline">\(\delta\)</span>, <span class="math inline">\(\epsilon\)</span> and <span class="math inline">\(\gamma\)</span>.</li>
+<li>Fractions: <code>\frac{3}{2}</code>would become <span class="math display">\[\frac{3}{2}\]</span>
+</li>
+<li>To get the normal derivative we use particular font:</li>
+</ul>
+<pre><code>\begin{equation}
+\frac{\textrm{dy}}{\textrm{dx}} = x
+\end{equation}</code></pre>
+
+<ul>
+<li>To align multiple equations we use the <code>\begin{align}</code> environment where all the <code>&amp;</code> will line up and we indicate a new line with <code>\\</code>. Don’t put a new line after the last equation.</li>
+</ul>
+<pre><code>\begin{align}
+\frac{\textrm{dy}_1}{\textrm{dx}} &amp;= x \\
+\frac{\textrm{dy}_2}{\textrm{dx}} &amp;= x \\
+\frac{\textrm{dy}_3}{\textrm{dx}} &amp;= x 
+\end{align}</code></pre>
+
+</div>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+        <div id="tocnav">
+      <h2 class="hasAnchor">
+<a href="#tocnav" class="anchor"></a>Contents</h2>
+      <ul class="nav nav-pills nav-stacked">
+<li><a href="#r"><code>R</code></a></li>
+      <li><a href="#figures">Figures</a></li>
+      <li><a href="#equations">Equations</a></li>
+      </ul>
+</div>
       </div>
 
 </div>

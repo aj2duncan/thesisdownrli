@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Creates pdf document from a single chapter of thesis with references — single_chapter • thesisdownrli</title>
+<title>Add in for <code>single_Chapter</code> function. — single_chapter_addin • thesisdownrli</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,14 +30,9 @@
 
 
 
-<meta property="og:title" content="Creates pdf document from a single chapter of thesis with references — single_chapter" />
+<meta property="og:title" content="Add in for <code>single_Chapter</code> function. — single_chapter_addin" />
 
-<meta property="og:description" content="In general the references in a thesis will be in a separate references
-section but a student will want an individual chapter to be proof read
-by someone else (e.g. a supervisor). This function makes this easier by
-creating a temporary R markdown file adding a references section and
-with the chapter to be rendered as a child document. More information
-please see the online vignette." />
+<meta property="og:description" content="Add in for single_Chapter function." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -128,54 +123,25 @@ please see the online vignette." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Creates pdf document from a single chapter of thesis with references</h1>
+    <h1>Add in for <code>single_Chapter</code> function.</h1>
     <small class="dont-index">Source: <a href='https://github.com/aj2duncan/thesisdownrli/blob/master/R/single_chapter.R'><code>R/single_chapter.R</code></a></small>
-    <div class="hidden name"><code>single_chapter.Rd</code></div>
+    <div class="hidden name"><code>single_chapter_addin.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>In general the references in a thesis will be in a separate references
-section but a student will want an individual chapter to be proof read
-by someone else (e.g. a supervisor). This function makes this easier by
-creating a temporary R markdown file adding a references section and
-with the chapter to be rendered as a child document. More information
-please see the online <a href='https://aj2duncan.github.io/thesisdownrli/reference/single_chapter.html'>vignette</a>.</p>
+    <p>Add in for <code>single_Chapter</code> function.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>single_chapter</span>(<span class='no'>chapter</span>)</pre>
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>chapter</th>
-      <td><p>filename of chapter to render.</p></td>
-    </tr>
-    </table>
-    
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+    <pre class="usage"><span class='fu'>single_chapter_addin</span>()</pre>
+        
 
-    <p>The function will parse the contents of index.Rmd and file the line which
-details the bibliography for the thesis and use this for the single chapter.
-Please make sure index.Rmd is in the working directory.</p>
-    
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='fu'>single_chapter</span>(<span class='st'>"01-chap1.Rmd"</span>)
-<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#details">Details</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+                </ul>
 
   </div>
 </div>
