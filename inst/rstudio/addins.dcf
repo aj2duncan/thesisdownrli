@@ -1,0 +1,4 @@
+Name: Knit a single chapter
+Description: Knits a single chapter of your thesis into a pdf file.
+Binding: single_chapter_addin
+Interactive: true

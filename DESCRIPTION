@@ -17,7 +17,10 @@ Depends:
 Imports:
     bookdown,
     xfun,
-    rmarkdown
+    rmarkdown,
+    shiny (>= 0.13),
+    miniUI (>= 0.1.1),
+    rstudioapi (>= 0.5)
 License: MIT + file LICENSE
 URL: https://aj2duncan.github.io/thesisdownrli/, https://github.com/aj2duncan/thesisdownrli
 BugReports: https://github.com/aj2duncan/thesisdownrli/issues

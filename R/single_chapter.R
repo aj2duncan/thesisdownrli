@@ -4,26 +4,38 @@
 #' section but a student will want an individual chapter to be proof read
 #' by someone else (e.g. a supervisor). This function makes this easier by
 #' creating a temporary R markdown file adding a references section and
-#' with the chapter to be rendered as a child document.
+#' with the chapter to be rendered as a child document. More information
+#' please see the online \href{https://aj2duncan.github.io/thesisdownrli/reference/single_chapter.html}{vignette}.
+#'
+#' The function will parse the contents of index.Rmd and file the line which
+#' details the bibliography for the thesis and use this for the single chapter.
+#' Please make sure index.Rmd is in the working directory.
 #'
 #' @param chapter filename of chapter to render.
-#' @param bib_file filepath to bibtex file for references. Defaults to
-#' "bib/thesis.bib" the default for thesisdownrli.
 #'
 #' @examples
 #' \dontrun{
 #' single_chapter("01-chap1.Rmd")
 #' }
 #' @export
-single_chapter = function(chapter, bib_file = "bib/thesis.bib") {
+single_chapter = function(chapter) {
   # create random file name
   rand_num = sample(c(1000:9999), size = 1)
   rand_file = paste0("temporary_", rand_num, ".Rmd")
 
+  if (file.exists("index.Rmd")) {
+    temp_index = readLines("index.Rmd")
+    bib = temp_index[grepl("^bibliography", temp_index)]
+  } else {
+    stop("Unable to find index.Rmd.
+         Please make sure the current working directory is correct.")
+  }
+
+
   # create YAML header in temporary file
   Rmd_file = c(
     "---",
-    paste("bibliography:", bib_file),
+    bib,
     "params:",
     "  filename: ''",
     "---",
@@ -57,5 +69,37 @@ single_chapter = function(chapter, bib_file = "bib/thesis.bib") {
     unlink(temp_directory, recursive = TRUE, force = TRUE)
   }
 
+}
+
+#' Add in for \code{single_Chapter} function.
+#'
+#' @export
+single_chapter_addin <- function(){
+
+
+  # Our ui will be a simple gadget page, which
+  # simply displays the time in a 'UI' output.
+  ui <- miniPage(
+    miniTitleBar("Knit a Single Chapter"),
+    miniContentPanel(
+      fileInput("single_chapter_input", "Please choose single chapter to knit",
+                multiple = FALSE, accept = ".Rmd"),
+      p(strong("Note:"), "The R Markdown file selected must be in the current
+        working directory."),
+      actionButton("knit_chapter", "Knit Single Chapter")
+    )
+  )
+
+  server <- function(input, output, session) {
+    observeEvent(input$knit_chapter, {
+      chapter_to_knit = isolate(input$single_chapter_input)
+      single_chapter(chapter_to_knit$name)
+    })
+
+  }
+
+  # run add-in in viewer
+  viewer <- dialogViewer("thesisdownrli", width = 400, height = 400)
+  runGadget(ui, server, viewer = viewer)
 }
 

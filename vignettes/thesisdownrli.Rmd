@@ -57,7 +57,7 @@ The following components are ones you should edit to customize your thesis:
 
 ### `_bookdown.yml`
 
-This is the main configuration file for your thesis. It determines what Rmd files are included in the output, and in what order. Arrange the order of your chapters in this file and ensure that the names match the names in your folders.
+This is the main configuration file for your thesis. It determines what Rmd files are included in the output, and in what order. Arrange the order of your chapters in this file and ensure that the names match the names in your folders. For more details please see the relevant [section](https://bookdown.org/yihui/bookdown/configuration.html#configuration) of the complete bookdown book.
 
 ### `index.Rmd`
 
@@ -66,11 +66,11 @@ document. You'll need to edit this to put your name on the first page, the title
 
 ### `01-chap1.Rmd`, `02-chap2.Rmd`, etc.
 
-These are the Rmd files for each chapter in your dissertation. Write your thesis in these. If you're writing in RStudio, you may find the [wordcount addin](https://github.com/benmarwick/wordcountaddin) useful for getting word counts and readability statistics in R markdown documents. 
+These are the Rmd files for each chapter in your dissertation. Write your thesis in these. If you're writing in RStudio, you may find the [wordcount addin](https://github.com/benmarwick/wordcountaddin) useful for getting word counts and readability statistics in R markdown documents. For more details on R markdown please see the [R markdown vignette](RMarkdown_Basics.html).
 
 ### `bib/`
 
-Store your bibliography (as bibtex files) here. You will find a template `thesis.bib` to get started with. We recommend using the [citr addin](https://github.com/crsh/citr) and [Zotero](https://www.zotero.org/) to efficiently manage and insert citations.
+Store your bibliography (as bibtex files) here. You will find a template `thesis.bib` to get started with. We recommend using the [citr addin](https://github.com/crsh/citr) and [Zotero](https://www.zotero.org/) to efficiently manage and insert citations. For more details on referencing please see the [referencing vignette](References.html).
 
 ### `csl/`
 

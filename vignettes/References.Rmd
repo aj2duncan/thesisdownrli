@@ -11,3 +11,106 @@ vignette: >
 knitr::opts_chunk$set(collapse = TRUE, comment = NA)
 ```
 
+R Markdown uses a particular form of referencing known as BibTeX. These are (as with LaTeX and R Markdown) plain text files which in this case end with `.bib`. There is a template file provided and it is recommended that the [citr](https://github.com/crsh/citr) package and the add-ins that it provides (along with the ability to link the Zotero) should be used for referencing. It should make both inserting references and managing a `.bib` file easier.  
+
+When *knitting* the document it is important that the `.bib` file(s) can be found by `thesisdownrli`. At present this is specified in the `index.Rmd` file 
+
+```
+bibliography: bib/thesis.bib
+```
+
+If the name of the `.bib` file this line **must** also be updated. To include more than one `.bib` file provided a list of them as per :
+
+```
+bibliography: ["bib/thesis.bib", "bib/thesis_refs.bib", "bib/more_refs.bib"
+```
+
+### Further information
+
+BibTeX references all follow a similar format and for most academic papers/textbooks a BibTeX reference can be downloaded from the web and pasted into your `.bib` file. An example of a BibTeX file is included below and an example is available on the VLE.
+
+```
+@Book{Murray2002,
+   title = {Mathematical biology I. , An introduction},
+   author = {Murray, J. D.},
+   series = {Interdisciplinary applied mathematics},
+   publisher = {Springer},
+   address = {New York, U.S.A.},
+   isbn = {0387952233},
+   year = 2002,
+   edition = 3
+}
+
+@Article{Ludwig1978,
+  title = {Qualitative analysis of insect outbreak systems: the spruce budworm and forest},
+  author = {Ludwig, D. and Jones, D.D. and Holling, C.S.},
+  year = {1978},
+  volume = {47},
+  pages = {315--332},
+  journal = {Journal of Animal Ecology}
+}
+
+@Manual{R-ggplot2,
+  title = {ggplot2: An Implementation of the Grammar of Graphics},
+  author = {Hadley Wickham and Winston Chang},
+  year = {2016},
+  note = {R package version 2.1.0},
+  url = {https://CRAN.R-project.org/package=ggplot2},
+}
+```
+
+
+The above example contains three references: one book `@Book`, one journal article `@article` and one `R` package `@Manual`. Each of these types is followed by the "reference key" (`Murray2002`, `Ludwig1978` and `R-ggplot2` respectively).
+
+It is this key that you use when you want to cite something in text. To cite something you simply type `[@reference-key]` or `@reference-key` (or use the `citr` add-ins). The square brackets will add brackets `()` to your reference. So to cite the Ludwig article on Spruce Budworm we would use `[@Ludwig1978]` or `@Ludwig1978`. This would print:
+
+> So to cite the Ludwig article on Spruce Budworm we would use [@Ludwig1978] or @Ludwig1978.
+
+**Note:** The reference key **should not** include spaces or underscores. 
+
+If you access a peer reviewed scientific paper online then there is normally an option to export the citation. In the vast majority of cases you will be able to export it in **BibTeX** format. 
+
+This will normally give you a `.bib` file to download or it will be downloaded automatically. You can open this file in RStudio and copy the citation into your personal `.bib` file. If you do this you should change the reference key to something more sensible. 
+
+The alternative is to create a citation yourself. The text below can be copied into your `.bib` file for you to edit for either an *article*, *book* or website *electronic*. 
+
+**Note:** All the individual bits of an bibtex citation need to be enclosed in curly brackets `{...}` and separated with commas. You do not need to use quotes. 
+
+```
+@Book{book-ref-key,
+   title = {Book Title},
+   author = {J. Doe and J. Doe},
+   publisher = {},
+   isbn = {},
+   year = {},
+   edition = {}
+}
+
+@Article{article-ref-key,
+  title = {Paper title},
+  author = {J. Doe and J. Doe},
+  year = {},
+  volume = {},
+  pages = {},
+  journal = {},
+  doi = {}
+}
+
+@Electronic{website-ref-key,
+  title = {Title of Web article/newspaper article/blog post},
+  author = {J. Doe and J. Doe},
+  year = {},
+  url = {http://thewebaddrressofarticle.com},
+}
+
+```
+
+### Compilation Errors
+
+When you press the **Knit** button, RStudio will try to compile the references. If there are any problems it will stop the compilation and provide you with an error message. Sometimes these are not that helpful. The most common mistakes are missing `,` in the `.bib` file or characters that need to be escaped. For more information of these characters please see the [bibtex](http://www.bibtex.org/SpecialSymbols/) website. 
+
+
+### Further Information
+
+Additional guidance on using citations can be found [here](https://bookdown.org/yihui/bookdown/citations.html) including how to cite `R` packages. 
+

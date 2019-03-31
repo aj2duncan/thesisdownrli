@@ -4,20 +4,23 @@
 \alias{single_chapter}
 \title{Creates pdf document from a single chapter of thesis with references}
 \usage{
-single_chapter(chapter, bib_file = "bib/thesis.bib")
+single_chapter(chapter)
 }
 \arguments{
 \item{chapter}{filename of chapter to render.}
-
-\item{bib_file}{filepath to bibtex file for references. Defaults to
-"bib/thesis.bib" the default for thesisdownrli.}
 }
 \description{
 In general the references in a thesis will be in a separate references
 section but a student will want an individual chapter to be proof read
 by someone else (e.g. a supervisor). This function makes this easier by
 creating a temporary R markdown file adding a references section and
-with the chapter to be rendered as a child document.
+with the chapter to be rendered as a child document. More information
+please see the online \href{https://aj2duncan.github.io/thesisdownrli/reference/single_chapter.html}{vignette}.
+}
+\details{
+The function will parse the contents of index.Rmd and file the line which
+details the bibliography for the thesis and use this for the single chapter.
+Please make sure index.Rmd is in the working directory.
 }
 \examples{
 \dontrun{
