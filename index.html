@@ -113,26 +113,26 @@
 <a href="#installing-pandoc-and-latex" class="anchor"></a>Installing Pandoc and LaTeX</h3>
 <p>If RStudio is already installed then so is Pandoc. If you haven’t installed RStudio the most recent version is available <a href="http://www.rstudio.com/products/rstudio/download/">here</a> and installing it will install Pandoc. If you are not an RStudio user, Pandoc can downloaded from <a href="https://pandoc.org/installing.html">here</a>.</p>
 <p>Having installed Pandoc, the final piece of software required is LaTeX, which is necessary to build PDF documents. By far the easiest way for any <code>R</code> user to install LaTeX on any platform is with the <a href="https://yihui.name/tinytex/"><code>tinytex</code></a> package:</p>
-<pre><code><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages(c('tinytex', 'rmarkdown'))
-tinytex::install_tinytex(force = TRUE)
-# after restarting your R session, confirm that you have LaTeX with 
-tinytex:::is_tinytex()</a></code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">'tinytex'</span>, <span class="st">'rmarkdown'</span>))</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">tinytex<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/tinytex/topics/install_tinytex">install_tinytex</a></span>(<span class="dt">force =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co"># after restarting your R session, confirm that you have LaTeX with </span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">tinytex<span class="op">:::</span><span class="kw">is_tinytex</span>()</a></code></pre></div>
 </div>
 <div id="installing-thesisdownrli" class="section level3">
 <h3 class="hasAnchor">
 <a href="#installing-thesisdownrli" class="anchor"></a>Installing <code>thesisdownrli</code>
 </h3>
 <p>The code below should install all the prerequisites for <code>thesisdownrli</code>. If you are unsure about installing packages yourself the code should be copy and paste.</p>
-<pre><code># check for and install devtools (for install_github) 
-# and bookdown
-pkgs = c("devtools", "bookdown")
-pkgs_needed = pkgs[!(pkgs %in% installed.packages())]
-for (pkg in pkgs_needed) {
-    install.packages(pkg, dependecies = TRUE)
-}
-# install thesisdownrli
-devtools::install_github("aj2duncan/thesisdownrli")</code></pre>
-<p>You should now have everything you need to start using <code>thesisdownrli</code>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co"># check for and install devtools (for install_github) </span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co"># and bookdown</span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">pkgs =<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"devtools"</span>, <span class="st">"bookdown"</span>)</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">pkgs_needed =<span class="st"> </span>pkgs[<span class="op">!</span>(pkgs <span class="op">%in%</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/installed.packages">installed.packages</a></span>())]</a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="cf">for</span> (pkg <span class="cf">in</span> pkgs_needed) {</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">    <span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(pkg, <span class="dt">dependecies =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">}</a>
+<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co"># install thesisdownrli</span></a>
+<a class="sourceLine" id="cb2-9" data-line-number="9">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"aj2duncan/thesisdownrli"</span>)</a></code></pre></div>
+<p>You should now have everything you need to start using <code>thesisdownrli</code>. Complete documentation can be found on <a href="https://aj2duncan.github.io/thesisdownrli" class="uri">https://aj2duncan.github.io/thesisdownrli</a>.</p>
 </div>
 </div>
 <div id="contributing" class="section level2">
