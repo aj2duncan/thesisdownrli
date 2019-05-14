@@ -26,7 +26,7 @@ If RStudio is already installed then so is Pandoc. If you haven't installed RStu
 
 Having installed Pandoc, the final piece of software required is LaTeX, which is necessary to build PDF documents. By far the easiest way for any `R` user to install LaTeX on any platform is with the [`tinytex`](https://yihui.name/tinytex/) package:
 
-```
+```r
 install.packages(c('tinytex', 'rmarkdown'))
 tinytex::install_tinytex(force = TRUE)
 # after restarting your R session, confirm that you have LaTeX with 
@@ -37,7 +37,7 @@ tinytex:::is_tinytex()
 
 The code below should install all the prerequisites for `thesisdownrli`. If you are unsure about installing packages yourself the code should be copy and paste. 
 
-```
+```r
 # check for and install devtools (for install_github) 
 # and bookdown
 pkgs = c("devtools", "bookdown")
