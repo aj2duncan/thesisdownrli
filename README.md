@@ -49,7 +49,7 @@ for (pkg in pkgs_needed) {
 devtools::install_github("aj2duncan/thesisdownrli")
 ```
 
-You should now have everything you need to start using `thesisdownrli`. 
+You should now have everything you need to start using `thesisdownrli`. Complete documentation can be found on [https://aj2duncan.github.io/thesisdownrli](https://aj2duncan.github.io/thesisdownrli).
 
 ## Contributing
 
