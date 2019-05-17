@@ -7,8 +7,8 @@ Authors@R: c(
     person("Chester", "Ismay", email = "chester.ismay@gmail.com", role = "aut"),
     person("Nick", "Solomon", email = "nick@nicksolomon.me", role = "aut"),
     person("Ben", "Marwick", email = "benmarwick@gmail.com", role = "aut"))
-Description: Using the bookdown package and LaTeX and Word thesis templates from
-    UC Santa Barbara (currently), this package aims to encourage reproducible research using
+Description: Using the bookdown package and LaTeX and Word thesis templates (currently modifed from
+    UC Santa Barbara, this package aims to encourage reproducible research using
     simple Markdown syntax while embedding all of the R code to produce plots
     and analyses as well. Based on Chester Ismay's thesisdown.
 Maintainer: Andrew Duncan <andrew@aj2duncan.com>
