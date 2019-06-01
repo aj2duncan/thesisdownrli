@@ -30,7 +30,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">thesisdownrli</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.6</span>
       </span>
     </div>
 
@@ -128,7 +128,7 @@
 <p>If you have followed the steps above then hopefully you will have a new folder containing some template R markdown files amongst other things. To test whether everything is working ok you should now open the file named <em>index.Rmd</em> (if it isn’t already open) and click the <strong>Knit</strong> button at the top.</p>
 <p>Alternatively, if you’re not using RStudio, you can use the line of code below, assuming your have set the <code>index/</code> directory as your working directory:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">bookdown<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/bookdown/topics/render_book">render_book</a></span>(<span class="st">'index.Rmd'</span>, thesisdownrli<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/thesisdownrli/topics/thesis_pdf">thesis_pdf</a></span>(<span class="dt">latex_engine =</span> <span class="st">'xelatex'</span>))</a></code></pre></div>
-<p>The PDF file of your thesis will be deposited in the <code>_book/</code> directory.</p>
+<p>The PDF file of your thesis will be deposited in the <code>_book/</code> directory. In most instances it will also either open automatically or prompt that RStudio blocked a pop-up.</p>
 </div>
 <div id="components" class="section level2">
 <h2 class="hasAnchor">

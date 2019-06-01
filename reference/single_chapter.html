@@ -68,7 +68,7 @@ please see the online vignette." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">thesisdownrli</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.6</span>
       </span>
     </div>
 
@@ -144,7 +144,7 @@ please see the online <a href='https://aj2duncan.github.io/thesisdownrli/referen
     
     </div>
 
-    <pre class="usage"><span class='fu'>single_chapter</span>(<span class='no'>chapter</span>)</pre>
+    <pre class="usage"><span class='fu'>single_chapter</span>(<span class='no'>chapter</span>, <span class='kw'>pdf</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -153,18 +153,24 @@ please see the online <a href='https://aj2duncan.github.io/thesisdownrli/referen
       <th>chapter</th>
       <td><p>filename of chapter to render.</p></td>
     </tr>
+    <tr>
+      <th>pdf</th>
+      <td><p>whether to render to pdf or not, default is to render to word
+document instead.</p></td>
+    </tr>
     </table>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The function will parse the contents of index.Rmd and file the line which
+    <p>The function will parse the contents of index.Rmd and find the line which
 details the bibliography for the thesis and use this for the single chapter.
 Please make sure index.Rmd is in the working directory.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='fu'>single_chapter</span>(<span class='st'>"01-chap1.Rmd"</span>)
+<span class='kw pkg'>thesisdownrli</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/thesisdownrli/topics/single_chapter'>single_chapter</a></span>(<span class='st'>"01-chap1.Rmd"</span>)
+<span class='kw pkg'>thesisdownrli</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/thesisdownrli/topics/single_chapter'>single_chapter</a></span>(<span class='st'>"01-chap1.Rmd"</span>, <span class='kw'>pdf</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 <span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

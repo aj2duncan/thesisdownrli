@@ -30,7 +30,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">thesisdownrli</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.6</span>
       </span>
     </div>
 
@@ -102,8 +102,9 @@
 <p>As part of writing a thesis it is expected that individual chapters will need to be produced without the entire thesis being put together. These would normally be passed to a student’s supervisor(s) for comment.</p>
 <p>With that in mind the <code>single_chapter</code> function allows this to happen. It creates a temporary R Markdown file (that is deleted after the pdf is created) with a YAML header that includes the bibliography file provided and inserts the R Markdown file of the chosen chapter as a “child” document. For more information on child documents please see the <a href="https://yihui.name/knitr/demo/child/">knitr</a> documentation.</p>
 <p>To use the function you can copy and paste the following line into the console</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="../reference/single_chapter.html">single_chapter</a></span>(<span class="st">"01-chap1.Rmd"</span>)</a></code></pre></div>
-<p>or ff you are using RStudio there is also an addin which allows the R Markdown file to be chosen interactively.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">thesisdownrli<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/thesisdownrli/topics/single_chapter">single_chapter</a></span>(<span class="st">"01-chap1.Rmd"</span>)</a></code></pre></div>
+<p>or if you are using RStudio locally (rather than RStudio server) there is also an addin which allows the R Markdown file to be chosen interactively.</p>
+<p>By default this will create a word document, if you prefer a pdf you can add the <code>pdf = TRUE</code> option.</p>
 <p>To find references the function will parse the contents of <code>index.Rmd</code>, find the line that starts <code>bibliography</code> and add that line to the temporary document. This means that <code>index.Rmd</code> <strong>needs</strong> to be in the current working directory.</p>
   </div>
 
