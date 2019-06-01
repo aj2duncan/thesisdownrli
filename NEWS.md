@@ -1,3 +1,7 @@
+# thesisdownrli 0.0.6
+
+- Change single chapter to render as word document by default, pdf still an option. 
+
 # thesisdownrli 0.0.5
 
 - Creation of pkgdown website for documentation

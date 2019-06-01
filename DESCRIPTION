@@ -1,6 +1,6 @@
 Package: thesisdownrli
 Title: An R Markdown thesis template for the University of the Highlands and Islands, River and Lochs Institute
-Version: 0.0.5
+Version: 0.0.6
 Authors@R: c(
     person("Andrew", "Duncan", email = "andrew@aj2duncan.com", role = c("cre", "aut")),
     person("Dan", "Ovando", email = "dovando07@gmail.com", role = "aut"),

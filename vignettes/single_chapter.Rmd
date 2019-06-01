@@ -18,9 +18,11 @@ With that in mind the `single_chapter` function allows this to happen. It create
 To use the function you can copy and paste the following line into the console 
 
 ```{r, eval = FALSE}
-single_chapter("01-chap1.Rmd")
+thesisdownrli::single_chapter("01-chap1.Rmd")
 ```
 
-or ff you are using RStudio there is also an addin which allows the R Markdown file to be chosen interactively.  
+or if you are using RStudio locally (rather than RStudio server) there is also an addin which allows the R Markdown file to be chosen interactively. 
+
+By default this will create a word document, if you prefer a pdf you can add the `pdf = TRUE` option. 
 
 To find references the function will parse the contents of `index.Rmd`, find the line that starts `bibliography` and add that line to the temporary document. This means that `index.Rmd` **needs** to be in the current working directory.

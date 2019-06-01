@@ -49,7 +49,7 @@ Alternatively, if you're not using RStudio, you can use the line of code below, 
 bookdown::render_book('index.Rmd', thesisdownrli::thesis_pdf(latex_engine = 'xelatex'))
 ```
 
-The PDF file of your thesis will be deposited in the `_book/` directory.
+The PDF file of your thesis will be deposited in the `_book/` directory. In most instances it will also either open automatically or prompt that RStudio blocked a pop-up.
 
 ## Components
 

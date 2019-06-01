@@ -74,7 +74,15 @@ context("Check creation of single chapter.")
 thesisdownrli::single_chapter("01-chap1.Rmd")
 
 test_that("thesisdownrli::single_chapter creates correct pdf", {
-  expect_true(file.exists(file.path(testing_path, 'index/01-chap1.pdf')))
+  expect_true(file.exists(file.path(testing_path, 'index/01-chap1.docx')))
+})
+
+context("Check creation of single chapter as pdf.")
+
+thesisdownrli::single_chapter("01-chap1.Rmd", pdf = TRUE)
+
+test_that("thesisdownrli::single_chapter creates correct pdf", {
+  expect_true(file.exists(file.path(testing_path, 'index/01-chap1.docx')))
 })
 
 

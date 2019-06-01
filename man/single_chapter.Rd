@@ -4,10 +4,13 @@
 \alias{single_chapter}
 \title{Creates pdf document from a single chapter of thesis with references}
 \usage{
-single_chapter(chapter)
+single_chapter(chapter, pdf = FALSE)
 }
 \arguments{
 \item{chapter}{filename of chapter to render.}
+
+\item{pdf}{whether to render to pdf or not, default is to render to word
+document instead.}
 }
 \description{
 In general the references in a thesis will be in a separate references
@@ -18,12 +21,13 @@ with the chapter to be rendered as a child document. More information
 please see the online \href{https://aj2duncan.github.io/thesisdownrli/reference/single_chapter.html}{vignette}.
 }
 \details{
-The function will parse the contents of index.Rmd and file the line which
+The function will parse the contents of index.Rmd and find the line which
 details the bibliography for the thesis and use this for the single chapter.
 Please make sure index.Rmd is in the working directory.
 }
 \examples{
 \dontrun{
-single_chapter("01-chap1.Rmd")
+thesisdownrli::single_chapter("01-chap1.Rmd")
+thesisdownrli::single_chapter("01-chap1.Rmd", pdf = TRUE)
 }
 }
